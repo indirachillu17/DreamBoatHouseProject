@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPages_DreamVacationSpot(Front-end)", "RazorPages_DreamVacationSpot\RazorPages_DreamVacationSpot(Front-end).csproj", "{3B6AFC79-5CB4-4622-9BF1-1035CF095779}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI_DreamVacationSpot(Backend)", "WebAPI_DreamVacationSpot(Backend)\WebAPI_DreamVacationSpot(Backend).csproj", "{55BEA80B-58F9-4820-AE1B-E9515EC1A4AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B6AFC79-5CB4-4622-9BF1-1035CF095779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B6AFC79-5CB4-4622-9BF1-1035CF095779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B6AFC79-5CB4-4622-9BF1-1035CF095779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B6AFC79-5CB4-4622-9BF1-1035CF095779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55BEA80B-58F9-4820-AE1B-E9515EC1A4AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55BEA80B-58F9-4820-AE1B-E9515EC1A4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55BEA80B-58F9-4820-AE1B-E9515EC1A4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55BEA80B-58F9-4820-AE1B-E9515EC1A4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB928266-C958-4D57-B0A0-5CAC64F8296C}
+	EndGlobalSection
+EndGlobal
