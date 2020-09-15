@@ -9,5 +9,8 @@ namespace WebAPIRestaurant_Backend_.Models
     {
 
         public int TripBookingID { get; set; }
+        public  int Date { get; set; }
+
+
     }
 }
