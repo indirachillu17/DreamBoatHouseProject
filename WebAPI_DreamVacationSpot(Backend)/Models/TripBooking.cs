@@ -7,14 +7,15 @@ namespace WebAPI_DreamVacationSpot_Backend_.Models
 {
     public class TripBooking
     {
-
         public int TripBookingID { get; set; }
-        public  int Date { get; set; }
-
+        public  int DateTimeYearFormat { get; set; }
+        
         public string TripName { get; set; }
 
-       
+        public  int NumberOfPeople { get; set; }
 
+        public double Price { get; set; }
+        
 
     }
 }
