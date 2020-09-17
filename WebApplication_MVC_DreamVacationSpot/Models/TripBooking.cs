@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebApplication_MVC_DreamVacationSpot.Models
+{
+    public class TripBooking
+{
+    public int TripBookingID { get; set; }
+    public DateTime DateTimeYearFormat { get; set; }
+
+    public string TripName { get; set; }
+
+    public int NumberOfPeople { get; set; }
+
+    public double Price { get; set; }
+
+
+}
+}
