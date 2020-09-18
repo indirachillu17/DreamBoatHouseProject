@@ -12,10 +12,11 @@ namespace WebAPI_DreamVacationSpot_Backend_.Models
         public  DateTime DateTimeYearFormat { get; set; }
         
         public string TripName { get; set; }
+        
 
         public  int NumberOfPeople { get; set; }
 
-        public double Price { get; set; }
+        public double TotalCost { get; set; }
         
 
     }
