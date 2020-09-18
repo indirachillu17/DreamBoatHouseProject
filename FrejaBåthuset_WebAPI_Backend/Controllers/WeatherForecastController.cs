@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace WebAPIRestaurant_Backend_.Controllers
+namespace FrejaBåthuset_WebAPI_Backend.Controllers
 {
     [ApiController]
     [Route("[controller]")]

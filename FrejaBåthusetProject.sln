@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI_FrejaBåthuset_Backend", "WebAPI_DreamVacationSpot(Backend)\WebAPI_FrejaBåthuset_Backend.csproj", "{666B1ECC-C6F1-4EF5-81BE-8CCDEDDEEEA0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrejaBåthuset_React_Front-end", "FrejaBåthuset_React_Front-end\FrejaBåthuset_React_Front-end.csproj", "{ACAF6123-B26D-4360-8575-6B62CA9BB61B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrejaBåthuset_WebAPI_Backend", "FrejaBåthuset_WebAPI_Backend\FrejaBåthuset_WebAPI_Backend.csproj", "{91C2CB5D-9A81-4171-AD9F-94605F2F43E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{666B1ECC-C6F1-4EF5-81BE-8CCDEDDEEEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{666B1ECC-C6F1-4EF5-81BE-8CCDEDDEEEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{666B1ECC-C6F1-4EF5-81BE-8CCDEDDEEEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{666B1ECC-C6F1-4EF5-81BE-8CCDEDDEEEA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACAF6123-B26D-4360-8575-6B62CA9BB61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACAF6123-B26D-4360-8575-6B62CA9BB61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAF6123-B26D-4360-8575-6B62CA9BB61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAF6123-B26D-4360-8575-6B62CA9BB61B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91C2CB5D-9A81-4171-AD9F-94605F2F43E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91C2CB5D-9A81-4171-AD9F-94605F2F43E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91C2CB5D-9A81-4171-AD9F-94605F2F43E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91C2CB5D-9A81-4171-AD9F-94605F2F43E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

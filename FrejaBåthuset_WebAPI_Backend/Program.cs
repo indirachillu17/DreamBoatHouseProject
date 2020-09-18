@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace WebAPIRestaurant_Backend_
+namespace FrejaBåthuset_WebAPI_Backend
 {
     public class Program
     {
