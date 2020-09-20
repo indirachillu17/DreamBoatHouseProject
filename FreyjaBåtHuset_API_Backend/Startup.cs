@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,9 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using FreyjaBåthuset_WebAPI_Backend.Data;
+using FreyjaBåtHuset_API_Backend.Data;
 
-namespace FrejaBåthuset_WebAPI_Backend
+namespace FreyjaBåtHuset_API_Backend
 {
     public class Startup
     {
@@ -29,8 +29,8 @@ namespace FrejaBåthuset_WebAPI_Backend
         {
             services.AddControllers();
 
-            services.AddDbContext<FreyjaBåthuset_WebAPI_BackendContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("FreyjaBåthuset_WebAPI_BackendContext")));
+            services.AddDbContext<FreyjaBåtHuset_API_BackendContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("FreyjaBåtHuset_API_BackendContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
