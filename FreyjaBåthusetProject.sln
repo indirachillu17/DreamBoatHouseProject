@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreyjaBåtHuset_API_Backend", "FreyjaBåtHuset_API_Backend\FreyjaBåtHuset_API_Backend.csproj", "{67879B94-5F15-4518-81A7-3DD56E918EE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrejyaBåtHuset_WebAPI_Backend", "FrejyaBåtHuset_WebAPI_Backend\FrejyaBåtHuset_WebAPI_Backend.csproj", "{CACD84CD-E29C-4940-9A0F-01110C215BEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreyjaBåtHuset_React_Front-end", "FreyjaBåtHuset_React_Front-end\FreyjaBåtHuset_React_Front-end.csproj", "{2C1BEBD2-04FB-4A18-9194-77FEB0459C13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrejyaBåtHuset_WebApplication_Front-end", "FrejyaBåtHuset_WebApplication_Front-end\FrejyaBåtHuset_WebApplication_Front-end.csproj", "{EE7C916A-208C-49E9-8EBC-5E483A0D940C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{67879B94-5F15-4518-81A7-3DD56E918EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{67879B94-5F15-4518-81A7-3DD56E918EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{67879B94-5F15-4518-81A7-3DD56E918EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{67879B94-5F15-4518-81A7-3DD56E918EE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C1BEBD2-04FB-4A18-9194-77FEB0459C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C1BEBD2-04FB-4A18-9194-77FEB0459C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C1BEBD2-04FB-4A18-9194-77FEB0459C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C1BEBD2-04FB-4A18-9194-77FEB0459C13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CACD84CD-E29C-4940-9A0F-01110C215BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CACD84CD-E29C-4940-9A0F-01110C215BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CACD84CD-E29C-4940-9A0F-01110C215BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CACD84CD-E29C-4940-9A0F-01110C215BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

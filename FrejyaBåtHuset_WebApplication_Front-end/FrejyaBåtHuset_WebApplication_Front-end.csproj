@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>FrejyaBåtHuset_WebApplication_Front_end</RootNamespace>
+  </PropertyGroup>
+
+
+
+</Project>
