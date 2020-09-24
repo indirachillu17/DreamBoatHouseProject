@@ -28,6 +28,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
 
             services.AddDbContext<FrejyaBåtHuset_WebAPI_BackendContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("FrejyaBåtHuset_WebAPI_BackendContext")));
@@ -46,6 +47,12 @@ namespace FrejyaBåtHuset_WebAPI_Backend
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
 
             app.UseEndpoints(endpoints =>
             {

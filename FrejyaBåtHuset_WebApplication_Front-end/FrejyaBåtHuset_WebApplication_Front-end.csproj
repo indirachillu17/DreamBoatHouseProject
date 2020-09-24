@@ -5,6 +5,14 @@
     <RootNamespace>FrejyaBåtHuset_WebApplication_Front_end</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FrejyaBåtHuset_WebAPI_Backend\FrejyaBåtHuset_WebAPI_Backend.csproj" />
+  </ItemGroup>
+
 
 
 </Project>
