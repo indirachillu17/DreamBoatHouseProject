@@ -1,4 +1,17 @@
-﻿<!DOCTYPE html>
+﻿@using  Microsoft.AspNetCore.Http;
+@{
+    var Role = Context.Session.GetString("Role");
+    bool IsAdmin=false;
+    bool IsUserLoggedIn = false;
+
+    if (Role != null)
+        IsAdmin = Role.ToLower() == "admin" ? true : false;
+
+    if (Context.Session != null && Context.Session.Keys.Count() > 0)
+        IsUserLoggedIn = true;
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,7 +24,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-               
+                <a class="navbar-brand" asp-area="" asp-page="/Index">FrejyaBåtHuset</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -24,10 +37,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/BåtHusetBokning">BåtHusetBokning</a>
-                        </li>
-                        
+
+                        @if (IsAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="./UserDetails/UserDetailsList">Users</a>
+                            </li>
+
+                        }
+
+                        @if (!IsUserLoggedIn)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Sign In</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/logout">Logout</a>
+                            </li>
+                        }
+
+
+
                     </ul>
                 </div>
             </div>

@@ -28,10 +28,11 @@ namespace FrejyaBåtHuset_WebAPI_Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen();
+            services.AddOpenApiDocument();
 
             services.AddDbContext<FrejyaBåtHuset_WebAPI_BackendContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("FrejyaBåtHuset_WebAPI_BackendContext")));
+            //created service then used its object & called function.
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,24 +41,29 @@ namespace FrejyaBåtHuset_WebAPI_Backend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
+            //using is used to define the scope.ApplicationServices gives access to application service container.
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<FrejyaBåtHuset_WebAPI_BackendContext>();
+                InitiazeData.SeedData(context);
+            }
+            
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            });
-
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }

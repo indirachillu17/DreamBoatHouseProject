@@ -1,0 +1,52 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.Login.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+<h4>Login</h4>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <div>
+            <p>
+                If User not already Registered then click on <a asp-page="../UserDetails/CreateUser">Register</a>
+            </p>
+        </div>
+
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            @if (Model.Message != "")
+            {
+                <label class="text-danger">@Model.Message</label>
+            }
+
+            <div class="form-group">
+                <label asp-for="login.EmailId" class="Control-Label"></label>
+                <span class="text-danger">*</span>
+                <input asp-for="login.EmailId" class="form-control" />
+                <span asp-validation-for="login.EmailId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="login.Password" class="Control-Label"></label>
+                <span class="text-danger">*</span>
+                <input asp-for="login.Password" type="password" class="form-control" />
+                <span asp-validation-for="login.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+

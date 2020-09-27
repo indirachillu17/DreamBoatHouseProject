@@ -1,0 +1,30 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.UserDetails.DetailsUserModel
+@{
+    ViewData["Title"] = "DetailsUser";
+}
+
+<h1>DetailsUser</h1>
+
+<div>
+    <h4>DetailsOfTheUser</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.userdetails.UserName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.userdetails.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.userdetails.EmailId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.userdetails.EmailId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./DetailsUser" asp-route-id="@Model.userdetails.Id">Details</a> :
+    <a asp-page="./UserDetailsList">Back to List</a>
+</div>
+

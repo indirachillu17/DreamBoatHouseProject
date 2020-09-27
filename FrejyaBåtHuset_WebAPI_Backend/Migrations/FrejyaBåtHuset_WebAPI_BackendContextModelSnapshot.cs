@@ -40,30 +40,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.ToTable("Andraaktiviteter");
                 });
 
-            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.Användare", b =>
-                {
-                    b.Property<int>("AnvändareID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("EmailId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AnvändareID");
-
-                    b.ToTable("Användare");
-                });
-
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokning", b =>
                 {
                     b.Property<int>("BåtHusetBokningID")
@@ -92,6 +68,30 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.HasKey("BåtHusetBokningID");
 
                     b.ToTable("BåtHusetBokning");
+                });
+
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("EmailId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }
