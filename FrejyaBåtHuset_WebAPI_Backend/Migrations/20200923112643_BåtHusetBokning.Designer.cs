@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
     [DbContext(typeof(FrejyaBåtHuset_WebAPI_BackendContext))]
-    [Migration("20200923135222_InitialCreate2")]
-    partial class InitialCreate2
+    [Migration("20200923112643_BåtHusetBokning")]
+    partial class BåtHusetBokning
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,51 +20,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                 .HasAnnotation("ProductVersion", "3.1.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.Andraaktiviteter", b =>
-                {
-                    b.Property<int>("AndraaktiviteterID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("NumberOfPersons")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OtherActivities")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("AndraaktiviteterID");
-
-                    b.ToTable("Andraaktiviteter");
-                });
-
-            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>
-                {
-                    b.Property<int>("UserID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("EmailId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserType")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("UserID");
-
-                    b.ToTable("User");
-                });
 
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokning", b =>
                 {

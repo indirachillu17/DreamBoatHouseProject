@@ -25,6 +25,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Andraaktiviteter>>> GetAndraaktiviteter()
         {
+
             return await _context.Andraaktiviteter.ToListAsync();
         }
 

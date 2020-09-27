@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
     [DbContext(typeof(FrejyaBåtHuset_WebAPI_BackendContext))]
-    [Migration("20200923114006_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200923135222_Andraaktiviteter")]
+    partial class Andraaktiviteter
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,9 +21,30 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.Användare", b =>
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.Andraaktiviteter", b =>
                 {
-                    b.Property<int>("AnvändareID")
+                    b.Property<int>("AndraaktiviteterID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NumberOfPersons")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OtherActivities")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("AndraaktiviteterID");
+
+                    b.ToTable("Andraaktiviteter");
+                });
+
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>
+                {
+                    b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -40,9 +61,9 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<string>("UserType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AnvändareID");
+                    b.HasKey("UserID");
 
-                    b.ToTable("Användare");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokning", b =>

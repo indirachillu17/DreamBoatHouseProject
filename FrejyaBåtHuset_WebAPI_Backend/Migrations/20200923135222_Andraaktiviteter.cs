@@ -2,10 +2,12 @@
 
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
-    public partial class InitialCreate2 : Migration
+    public partial class Andraaktiviteter : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+               name: "Andraaktiviteter");
             migrationBuilder.CreateTable(
                 name: "Andraaktiviteter",
                 columns: table => new
@@ -26,6 +28,21 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Andraaktiviteter");
+
+            migrationBuilder.CreateTable(
+               name: "Andraaktiviteter",
+               columns: table => new
+               {
+                   AndraaktiviteterID = table.Column<int>(nullable: false)
+                       .Annotation("SqlServer:Identity", "1, 1"),
+                   OtherActivities = table.Column<string>(nullable: true),
+                   Price = table.Column<decimal>(nullable: false),
+                   NumberOfPersons = table.Column<string>(nullable: true)
+               },
+               constraints: table =>
+               {
+                   table.PrimaryKey("PK_Andraaktiviteter", x => x.AndraaktiviteterID);
+               });
         }
     }
 }
