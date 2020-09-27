@@ -12,48 +12,77 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AnvändareController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly FrejyaBåtHuset_WebAPI_BackendContext _context;
 
-        public AnvändareController(FrejyaBåtHuset_WebAPI_BackendContext context)
+        public UserController(FrejyaBåtHuset_WebAPI_BackendContext context)
         {
             _context = context;
         }
-
-        // GET: api/Användare
+        public string Message { get; set; }
+        // GET: api/User
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Användare>>> GetAnvändare()
+        public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
-            return await _context.Användare.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
-        // GET: api/Användare/5
+        // GET: api/User/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Användare>> GetAnvändare(int id)
+        public async Task<ActionResult<User>> GetUser(int id)
         {
-            var användare = await _context.Användare.FindAsync(id);
+            var User = await _context.Users.FindAsync(id);
 
-            if (användare == null)
+            if (User == null)
             {
                 return NotFound();
             }
 
-            return användare;
+            return User;
         }
 
-        // PUT: api/Användare/5
+        [HttpGet]
+        [Route("sayhi")]
+        public  ActionResult SayHi()
+        {
+            return Content("HI");
+        }
+        [HttpPost]
+        [Route ("IsValidUser")]
+        public  ActionResult<User> IsValidUser(User userData)
+        {
+            if(!string.IsNullOrEmpty(userData.EmailId) && !string.IsNullOrEmpty(userData.Password))
+            {
+                var user = _context.Users.FirstOrDefault(i => i.EmailId.ToLower() == userData.EmailId.Trim().ToLower() && i.Password == userData.Password.Trim());
+            
+                if(user != null)
+                {
+                    return Accepted(user);
+                }
+                else
+                {
+                    return Unauthorized(null);
+                }
+            }
+            else
+            {
+                return BadRequest(null);
+            }
+        }
+
+        // PUT: api/User/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAnvändare(int id, Användare användare)
+        public async Task<IActionResult> PutUser(int id, User User)
         {
-            if (id != användare.AnvändareID)
+            if (id != User.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(användare).State = EntityState.Modified;
+            _context.Entry(User).State = EntityState.Modified;
 
             try
             {
@@ -61,7 +90,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AnvändareExists(id))
+                if (!UserExists(id))
                 {
                     return NotFound();
                 }
@@ -74,37 +103,37 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
             return NoContent();
         }
 
-        // POST: api/Användare
+        // POST: api/User
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Användare>> PostAnvändare(Användare användare)
+        public async Task<ActionResult<User>> PostUser(User User)
         {
-            _context.Användare.Add(användare);
+            _context.Users.Add(User);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAnvändare", new { id = användare.AnvändareID }, användare);
+            return CreatedAtAction("GetUser", new { id = User.Id }, User);
         }
 
-        // DELETE: api/Användare/5
+        // DELETE: api/User/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Användare>> DeleteAnvändare(int id)
+        public async Task<ActionResult<User>> DeleteUser(int id)
         {
-            var användare = await _context.Användare.FindAsync(id);
-            if (användare == null)
+            var User = await _context.Users.FindAsync(id);
+            if (User == null)
             {
                 return NotFound();
             }
 
-            _context.Användare.Remove(användare);
+            _context.Users.Remove(User);
             await _context.SaveChangesAsync();
 
-            return användare;
+            return User;
         }
 
-        private bool AnvändareExists(int id)
+        private bool UserExists(int id)
         {
-            return _context.Användare.Any(e => e.AnvändareID == id);
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }

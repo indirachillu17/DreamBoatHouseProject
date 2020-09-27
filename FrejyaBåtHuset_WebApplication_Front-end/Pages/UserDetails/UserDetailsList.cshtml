@@ -1,0 +1,46 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.UserDetails.UserDetailsListModel
+@{
+    ViewData["Title"] = "UserDetailsList";
+}
+
+<h1>UserDetailsList</h1>
+<p>
+    <a asp-page="CreateUser">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.listofusers[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.listofusers[0].EmailId)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listofusers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmailId)
+                </td>
+                <td>
+                    
+                    <a asp-page="./DetailsUser" asp-route-id="@item.Id">Details</a> :
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

@@ -42,9 +42,9 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.ToTable("Andraaktiviteter");
                 });
 
-            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.Användare", b =>
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>
                 {
-                    b.Property<int>("AnvändareID")
+                    b.Property<int>("UserID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -61,9 +61,9 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<string>("UserType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AnvändareID");
+                    b.HasKey("UserID");
 
-                    b.ToTable("Användare");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokning", b =>
