@@ -1,23 +1,61 @@
 ﻿@page
-
-@model FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokning
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåtHusetBokningModel
 @{
     ViewData["Title"] = "BåtHusetBokning";
 }
-
-<h1>BåtHusetBokning</h1>
-
-<!DOCTYPE html>
+<h1>@ViewData["Title"]</h1>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Welcome</title>
-</head>
-<body>
 
-    <h1>Welcome @Model.DiscoverBoatHouse</h1>
-    <a asp-page="Welcome" asp-page-handler="Logout">Logout</a>
+<body style="background-color:aqua">
+    <h1>
+        Välkommen till BåtHusetBokning
+    </h1>
+    <form>
+        Discover BoatHouse:
+        <input type="text" value="" /><br />
+        <br> Boat StartDateTime:
+        <input type="text" value="" />  <br />
+        <br> Boat EndDateTime:
+        <input type="text" value="" /><br />
+
+        <div>
+            <br>   OtherActivities:
+            <select id="OtherActivities" name="OtherActivities">
+                <option value="Barn Activities">Barn Activities</option>
+                <option value="Spa-Center">Spa-Center</option>
+                <option value="Fish Pedicure and Manicure">Fish Pedicure and Manicure</option>
+                <option value="Dance Show">Dance Show</option>
+                <option value="Singing Concert">Singing Concert</option>
+            </select>
+        </div>
+        <div>
+            <br>  ActivityTime:
+            <select id="Activity Time" name="Activity Time">
+                <option value="Barn Activities">10-12</option>
+                <option value="Spa-Center">14-15</option>
+                <option value="Fish Pedicure and Manicure">15-16</option>
+                <option value="Dance Show">16-17</option>
+                <option value="Singing Concert">18-19</option>
+            </select>
+        </div>
+        <div>
+            <br>    Restaurant:
+            <select id="Restaurant" name="Restaurant">
+                <option value="Barn Activities">Non-Vegeterian Food</option>
+                <option value="Spa-Center">Vegeterian Food</option>
+                <option value="Fish Pedicure and Manicure">Non.Vegeterian Food</option>
+                <option value="Dance Show">Vegeterian Food</option>
+                <option value="Singing Concert">Non-Vegeterian and Vegeterian Starters</option>
+            </select>
+        </div>
+        <p>
+            <input type="submit" value="Submit" />
+
+
+        </p>
+
+    </form>
 
 </body>
 </html>

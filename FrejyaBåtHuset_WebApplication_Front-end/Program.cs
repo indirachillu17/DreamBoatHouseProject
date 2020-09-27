@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using FrejyaBåtHuset_WebApplication_Front_end.Pages;
 
 namespace FrejyaBåtHuset_WebApplication_Front_end
 {
@@ -14,6 +15,7 @@ namespace FrejyaBåtHuset_WebApplication_Front_end
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
