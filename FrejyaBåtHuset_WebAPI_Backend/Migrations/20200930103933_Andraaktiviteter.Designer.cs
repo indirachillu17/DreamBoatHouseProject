@@ -58,8 +58,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<int>("DiscoverBoatHouse")
                         .HasColumnType("int");
 
-                    b.Property<int>("NoOfPersons")
-                        .HasColumnType("int");
 
                     b.Property<string>("OtherActivities")
                         .HasColumnType("nvarchar(max)");

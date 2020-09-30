@@ -11,7 +11,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         public int BåtHusetBokningID { get; set; }
 
         public int DiscoverBoatHouse { get; set; }
-
+        public decimal BoatTripPrice { get; set; }
         public DateTime BoatStart { get; set; }
         public DateTime BoatEnd { get; set; }
        
@@ -19,6 +19,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
 
         public string Restaurant { get; set; }
         public decimal PriceOfTicket { get; set; }
-        public int NoOfPersons { get; set; }
+        
     }
 }
