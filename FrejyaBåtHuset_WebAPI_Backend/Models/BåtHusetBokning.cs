@@ -14,9 +14,11 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
 
         public DateTime BoatStart { get; set; }
         public DateTime BoatEnd { get; set; }
-        public string ActivitiesTiming { get; set; }
+       
         public string OtherActivities { get; set; }
 
         public string Restaurant { get; set; }
+        public decimal PriceOfTicket { get; set; }
+        public int NoOfPersons { get; set; }
     }
 }

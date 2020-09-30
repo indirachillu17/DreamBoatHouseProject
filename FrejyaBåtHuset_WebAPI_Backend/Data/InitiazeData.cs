@@ -52,11 +52,11 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         private static void SeedBåtHusetBokningData()
         {
             List<BåtHusetBokning> båtHusetBokning = new List<BåtHusetBokning>();
-            båtHusetBokning.Add(new BåtHusetBokning() { DiscoverBoatHouse=1 , BoatStart=Convert.ToDateTime("2020-12-23 10:00:00") ,BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"),ActivitiesTiming="10am-12pm",OtherActivities="Barn-Activities",Restaurant="Non-Vegeterian Food"});
-            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"), ActivitiesTiming = "14pm-15pm", OtherActivities = "Spa-Center", Restaurant = "Vegeterian Food" });
-            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"), ActivitiesTiming = "15pm-16pm", OtherActivities = "Fish Pedicure and Manicure", Restaurant = "Non-Vegeterian Food" });
-            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"), ActivitiesTiming = "16pm-17pm", OtherActivities = "Dance Show", Restaurant = "Vegeterian Food" });
-            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"), ActivitiesTiming = "18pm-19pm", OtherActivities = "Singing Concert", Restaurant = " Non-Vegeterian and Vegeterian Starters" });
+            båtHusetBokning.Add(new BåtHusetBokning() { DiscoverBoatHouse=1 , BoatStart=Convert.ToDateTime("2020-12-23 10:00:00") ,BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"),OtherActivities="Barn-Activities",Restaurant="Non-Vegeterian Food", PriceOfTicket = 450, NoOfPersons=2  });
+            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"),  OtherActivities = "Spa-Center", Restaurant = "Vegeterian Food", PriceOfTicket = 1000, NoOfPersons=3  });
+            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"),  OtherActivities = "Fish Pedicure and Manicure", Restaurant = "Non-Vegeterian Starters", PriceOfTicket = 1500, NoOfPersons=4 });
+            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"),  OtherActivities = "Dance Show", Restaurant = " Vegeterian Starters", PriceOfTicket = 750, NoOfPersons = 5 });
+            båtHusetBokning.Add(new BåtHusetBokning() {  DiscoverBoatHouse = 1, BoatStart = Convert.ToDateTime("2020-12-23 10:00:00"), BoatEnd = Convert.ToDateTime("2020-12-23 19:00:00"), OtherActivities = "Singing Concert", Restaurant = " ", PriceOfTicket = 1200, NoOfPersons =6 });
             
 
             _context.BåtHusetBokning.AddRange(båtHusetBokning);
@@ -65,11 +65,11 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         private static void SeedAndraaktiviteterData()
         {
             List<Andraaktiviteter> andraAktiviteter = new List<Andraaktiviteter>();
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Barn-Activities", Price=450, NumberOfPersons= "5" });
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Spa-Center", Price=1000,NumberOfPersons="10" });
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Fish Pedicure and Manicure", Price=1500,NumberOfPersons="7"});
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Dance Show", Price=750,NumberOfPersons="12" });
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Singing Concert", Price=1200,NumberOfPersons="15" });
+            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Barn-Activities",Price=450, ActivitiesTiming = "10am-12pm" });
+            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Spa-Center", Price = 1000, ActivitiesTiming = "14pm-15pm" });
+            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Fish Pedicure and Manicure", Price = 1500, ActivitiesTiming = "15pm-16pm"});
+            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Dance Show", Price=750, ActivitiesTiming = "16pm-17pm" });
+            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Singing Concert", Price=1200, ActivitiesTiming = "18pm-19pm"});
 
             _context.Andraaktiviteter.AddRange(andraAktiviteter);
             _context.SaveChanges();

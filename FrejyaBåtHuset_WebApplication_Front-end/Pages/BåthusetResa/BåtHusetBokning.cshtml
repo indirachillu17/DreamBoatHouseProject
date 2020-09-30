@@ -1,0 +1,155 @@
+﻿@page
+@model  FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.BåtHusetBokningModel
+  
+@{
+    ViewData["Title"] = "BåtHusetBokning";
+    
+}
+
+<h1>BåtHusetBokning</h1>
+
+@*<p>
+        <a asp-page="BåtHusetBokning">BåtHusetBokning</a>
+    </p>*@
+<table class="table">
+
+    <thead>
+
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.listofusers[0].DiscoverBoatHouse)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.listofusers[0].DiscoverBoatHouse)
+            </dd>
+        </dl>
+        @*<tr>
+            <th>
+
+                <label for="start-date">Starts on:</label>
+                <input type="date" id="start-date" name="start_date" />
+            </th>
+
+        </tr>*@
+
+        <tr>
+            <th>
+
+                <label for="Boat Start Time">Boat Start Time:</label>
+
+                <input type="datetime-local" id="meeting-time"
+                       name="meeting-time" value="2020-12-10T 10:00"
+                       min="2020-06-07T00:00" max="2024-06-14T00:00">
+            </th>
+
+        </tr>
+
+        <tr>
+            <th>
+
+                <label for="Boat End Time">Boat End Time:</label>
+
+                <input type="datetime-local" id="meeting-time"
+                       name="meeting-time" value="2020-10-12T19:00"
+                       min="2020-06-07T00:00" max="2024-06-14T00:00">
+            </th>
+
+        </tr>
+
+
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.listofusers[0].OtherActivities)
+            </th>
+
+            <th>
+                <select name="listbox" id="listbox" multiple="multiple">
+                    @foreach (var item in Model.listofusers)
+                    {
+
+                        <option value="@item.OtherActivities">
+                            @item.OtherActivities
+                        </option>
+
+                    }
+                </select>
+
+        </tr>
+        <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.listofusers[0].PriceOfTicket)
+            </th>
+            <th>
+                <select name="listbox" id="listbox" multiple="multiple">
+                    @foreach (var item in Model.listofusers)
+                    {
+
+                        <option value="@item.PriceOfTicket">
+                            @item.PriceOfTicket
+                        </option>
+
+                    }
+                </select>
+        </tr>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.listofusers[0].NoOfPersons)
+            </th>
+
+            <th>
+                <select name="listbox" id="listbox" multiple="multiple">
+
+
+                    @foreach (var item in Model.listofusers)
+                    {
+
+                        <option value="@item.NoOfPersons">
+                            @item.NoOfPersons
+                        </option>
+                        
+                    }
+                </select>
+
+            </th>
+        </tr>
+            
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.listofusers[0].Restaurant)
+                </th>
+
+                <th>
+                    <select name="listbox" id="listbox" multiple="multiple">
+                        @foreach (var item in Model.listofusers)
+                        {
+
+                            <option value="@item.Restaurant">
+                                @item.Restaurant
+                            </option>
+
+                        }
+                    </select>
+
+                </th>
+            </tr>
+
+
+
+            <tr>
+                <th>
+                    <input type="submit" value="Submit" />
+
+                </th>
+            </tr>
+
+
+    </thead>
+
+</table>
+
+
+

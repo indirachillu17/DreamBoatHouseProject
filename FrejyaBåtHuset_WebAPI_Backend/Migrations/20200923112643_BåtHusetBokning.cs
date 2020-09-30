@@ -19,9 +19,10 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     DiscoverBoatHouse = table.Column<int>(nullable: false),
                     BoatStart = table.Column<DateTime>(nullable: false),
                     BoatEnd = table.Column<DateTime>(nullable: false),
-                    ActivitiesTiming = table.Column<string>(nullable: true),
                     OtherActivities = table.Column<string>(nullable: true),
-                    Restaurant = table.Column<string>(nullable: true)
+                    Restaurant = table.Column<string>(nullable: true),
+                    PriceOfTicket = table.Column<decimal>(nullable: false),
+                    NoOfPersons = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,9 +44,10 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         DiscoverBoatHouse = table.Column<int>(nullable: false),
                         BoatStart = table.Column<DateTime>(nullable: false),
                         BoatEnd = table.Column<DateTime>(nullable: false),
-                        ActivitiesTiming = table.Column<string>(nullable: true),
                         OtherActivities = table.Column<string>(nullable: true),
-                        Restaurant = table.Column<string>(nullable: true)
+                        Restaurant = table.Column<string>(nullable: true),
+                        PriceOfTicket = table.Column<decimal>(nullable: false),
+                        NoOfPersons = table.Column<int>(nullable: false)
                     },
                      constraints: table =>
                     {

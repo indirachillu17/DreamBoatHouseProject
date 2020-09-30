@@ -15,9 +15,9 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.HelperClasses
         {
             HttpClient httpClient = new HttpClient();
 
-            var resposnseMessage = await httpClient.GetAsync(Url);
+            var responseMessage = await httpClient.GetAsync(Url);
 
-            var response = await resposnseMessage.Content.ReadAsStringAsync();
+            var response = await responseMessage.Content.ReadAsStringAsync();
 
             if (!string.IsNullOrEmpty(response))
                 return JsonConvert.DeserializeObject<T>(response);
@@ -30,9 +30,9 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.HelperClasses
             HttpClient httpClient = new HttpClient();
             StringContent stringContent = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-            var resposnseMessage = await httpClient.PostAsync(Url, stringContent);
+            var responseMessage = await httpClient.PostAsync(Url, stringContent);
 
-            var response = await resposnseMessage.Content.ReadAsStringAsync();
+            var response = await responseMessage.Content.ReadAsStringAsync();
 
             if (!string.IsNullOrEmpty(response))
                 return JsonConvert.DeserializeObject<T>(response);
@@ -53,7 +53,7 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.HelperClasses
             HttpClient httpClient = new HttpClient();
             StringContent stringContent = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
 
-            var resposnseMessage = await httpClient.DeleteAsync(Url);
+            var responseMessage = await httpClient.DeleteAsync(Url);
 
             
         }

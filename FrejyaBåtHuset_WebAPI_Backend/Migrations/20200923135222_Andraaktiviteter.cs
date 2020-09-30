@@ -16,7 +16,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     OtherActivities = table.Column<string>(nullable: true),
                     Price = table.Column<decimal>(nullable: false),
-                    NumberOfPersons = table.Column<string>(nullable: true)
+                    ActivitiesTiming = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -37,7 +37,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                        .Annotation("SqlServer:Identity", "1, 1"),
                    OtherActivities = table.Column<string>(nullable: true),
                    Price = table.Column<decimal>(nullable: false),
-                   NumberOfPersons = table.Column<string>(nullable: true)
+                   ActivitiesTiming = table.Column<string>(nullable: true)
                },
                constraints: table =>
                {

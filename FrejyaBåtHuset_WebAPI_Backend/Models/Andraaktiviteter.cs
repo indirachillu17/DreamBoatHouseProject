@@ -10,6 +10,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         public int AndraaktiviteterID { get; set; }
         public string OtherActivities { get; set; }
         public decimal Price { get; set; }
-        public string  NumberOfPersons { get; set; }
+
+        public string ActivitiesTiming { get; set; }
     }
 }
