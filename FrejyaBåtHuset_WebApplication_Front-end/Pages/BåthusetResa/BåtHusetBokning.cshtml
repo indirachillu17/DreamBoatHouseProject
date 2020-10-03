@@ -41,7 +41,7 @@
 
                 //<input name="areChecked" type="checkbox" value="{{@item.OtherActivities+' ' + @item.ActivitiesTiming' ' + @item.PriceOfTicket}}" />@item.OtherActivities <br />
                 //<input name="areChecked" type="checkbox" value="@item.OtherActivities " />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
-                <input name="areChecked" type="checkbox" value="@item.OtherActivities " />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
+                <input name="areChecked" type="checkbox" value="@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket" />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
 
             }
             <br />
@@ -68,8 +68,18 @@
 
                 }
             </select>
+
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            @*@foreach (var item in @Model.båtHusetBokning)
+            {
+
+                //<input name="areChecked" type="checkbox" value="{{@item.OtherActivities+' ' + @item.ActivitiesTiming' ' + @item.PriceOfTicket}}" />@item.OtherActivities <br />
+                //<input name="areChecked" type="checkbox" value="@item.OtherActivities " />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
+                <input name="ticketPrice" type="text" value="@item. @item.ActivitiesTiming @item.PriceOfTicket" />@item.PriceOfTicket <br />
+
+            }*@
+
             <button>Submit</button>
 
 

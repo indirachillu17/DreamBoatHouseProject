@@ -24,7 +24,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         public string OtherActivities { get; set; }
 
         public string Restaurant { get; set; }
-        public decimal PriceOfTicket { get; set; }
+        //public decimal PriceOfTicket { get; set; }
 
         public string Beverages { get; set; }
         public int NoOfPersons { get; set; }

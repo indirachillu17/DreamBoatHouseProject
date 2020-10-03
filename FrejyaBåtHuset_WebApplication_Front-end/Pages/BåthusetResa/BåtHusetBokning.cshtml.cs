@@ -28,6 +28,7 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
         [BindProperty]
         public List<string> lstBeverages { get; set; }
 
+
         [BindProperty]
         public List<string> lstRestaurant { get; set; }
 
@@ -73,11 +74,13 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
             }
 
 
+           
+
             båtHusetBokningSave = båtHusetBokning.FirstOrDefault();
             båtHusetBokningSave.OtherActivities = otherActivities;
             båtHusetBokningSave.Restaurant = restaurant;
             båtHusetBokningSave.Beverages = beverages;
-
+            
 
 
 

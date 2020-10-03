@@ -24,7 +24,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     BoatEndTime = table.Column<string>(nullable: true),
                     OtherActivities = table.Column<string>(nullable: true),
                     Restaurant = table.Column<string>(nullable: true),
-                    PriceOfTicket = table.Column<decimal>(nullable: false),
                     Beverages = table.Column<string>(nullable: true),
                     NoOfPersons = table.Column<int>(nullable: false),
                     TotalPrice = table.Column<decimal>(nullable: false)
@@ -56,7 +55,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     BoatEndTime = table.Column<string>(nullable: true),
                     OtherActivities = table.Column<string>(nullable: true),
                     Restaurant = table.Column<string>(nullable: true),
-                    PriceOfTicket = table.Column<decimal>(nullable: false),
                     Beverages = table.Column<string>(nullable: true),
                     NoOfPersons = table.Column<int>(nullable: false),
                     TotalPrice = table.Column<decimal>(nullable: false)

@@ -88,7 +88,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         private static void SeedBåtHusetBokningTransactionData()
         {
             List<BåtHusetBokningTransaction> båtHusetBokningTransaction = new List<BåtHusetBokningTransaction>();
-            båtHusetBokningTransaction.Add(new BåtHusetBokningTransaction() { UserId = 15, DiscoverBoatHouse = 1, BoatTripPrice = 350, BoatTripDate = Convert.ToDateTime("2020-12-23"), BoatStartTime = " 10:00:00", BoatEndTime = " 19:00:00", OtherActivities = "Barn-Activities", Restaurant = "Non-Vegeterian Food(200Kr)", PriceOfTicket = 450, NoOfPersons = 2, Beverages = "Water bottle",TotalPrice=2230 });
+            båtHusetBokningTransaction.Add(new BåtHusetBokningTransaction() { UserId = 15, DiscoverBoatHouse = 1, BoatTripPrice = 350, BoatTripDate = Convert.ToDateTime("2020-12-23"), BoatStartTime = " 10:00:00", BoatEndTime = " 19:00:00", OtherActivities = "Barn-Activities", Restaurant = "Non-Vegeterian Food(200Kr)", NoOfPersons = 2, Beverages = "Water bottle",TotalPrice=2230 });
             _context.BåtHusetBokningTransaction.AddRange(båtHusetBokningTransaction);
             _context.SaveChanges();
 
