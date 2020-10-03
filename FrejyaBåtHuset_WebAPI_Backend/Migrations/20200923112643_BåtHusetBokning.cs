@@ -18,12 +18,14 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DiscoverBoatHouse = table.Column<int>(nullable: false),
                     BoatTripPrice = table.Column<decimal>(nullable: false),
-                    BoatStart = table.Column<DateTime>(nullable: false),
-                    BoatEnd = table.Column<DateTime>(nullable: false),
+                    BoatTripDate = table.Column<DateTime>(nullable: false),
+                    BoatStartTime = table.Column<string>(nullable: true),
+                    BoatEndTime = table.Column<string>(nullable: true),
                     OtherActivities = table.Column<string>(nullable: true),
+                    ActivitiesTiming = table.Column<string>(nullable: true),
                     Restaurant = table.Column<string>(nullable: true),
-                    PriceOfTicket = table.Column<decimal>(nullable: false)
-                    
+                    PriceOfTicket = table.Column<decimal>(nullable: false),
+                    Beverages= table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -41,15 +43,18 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     columns: table => new
                     {
                         BåtHusetBokningID = table.Column<int>(nullable: false)
-                   .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("SqlServer:Identity", "1, 1"),
                         DiscoverBoatHouse = table.Column<int>(nullable: false),
                         BoatTripPrice = table.Column<decimal>(nullable: false),
-                        BoatStart = table.Column<DateTime>(nullable: false),
-                        BoatEnd = table.Column<DateTime>(nullable: false),
+                        BoatTripDate = table.Column<DateTime>(nullable: false),
+                        BoatStartTime = table.Column<string>(nullable: true),
+                        BoatEndTime = table.Column<string>(nullable: true),
                         OtherActivities = table.Column<string>(nullable: true),
+                        ActivitiesTiming = table.Column<string>(nullable: true),
                         Restaurant = table.Column<string>(nullable: true),
-                        PriceOfTicket = table.Column<decimal>(nullable: false)
-                        
+                        PriceOfTicket = table.Column<decimal>(nullable: false),
+                        Beverages = table.Column<string>(nullable: true)
+
                     },
                      constraints: table =>
                     {

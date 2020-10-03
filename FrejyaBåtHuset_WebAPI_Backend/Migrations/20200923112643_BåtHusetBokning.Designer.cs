@@ -31,10 +31,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<string>("ActivitiesTiming")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("BoatEnd")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("BoatStart")
+                    b.Property<DateTime>("BoatTripDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("DiscoverBoatHouse")
@@ -42,10 +39,19 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 
                     b.Property<string>("OtherActivities")
                         .HasColumnType("nvarchar(max)");
-
+                    b.Property<string>("BoatStartTime")
+                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("BoatEndTime")
+                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("BoatTripPrice")
+                    .HasColumnType("DECIMAL (18)");
                     b.Property<string>("Restaurant")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Restaurant")
+                       .HasColumnType("nvarchar(max)");
+                    b.Property<string>("PriceOfTicket")
+                     .HasColumnType("DECIMAL (18)");
                     b.HasKey("BåtHusetBokningID");
 
                     b.ToTable("BåtHusetBokning");
