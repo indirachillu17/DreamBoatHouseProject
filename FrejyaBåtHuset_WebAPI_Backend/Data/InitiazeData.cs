@@ -18,7 +18,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
 
 
             //Deletes database completly.
-            //_context.Database.EnsureDeleted();
+            _context.Database.EnsureDeleted();
 
             //Apply all migrations automatically
             _context.Database.Migrate();

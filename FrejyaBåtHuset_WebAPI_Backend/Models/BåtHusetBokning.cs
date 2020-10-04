@@ -14,6 +14,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         public int BåtHusetBokningID { get; set; }
 
         public int DiscoverBoatHouse { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal BoatTripPrice { get; set; }
         public DateTime BoatTripDate { get; set; }
         public string BoatStartTime { get; set; }

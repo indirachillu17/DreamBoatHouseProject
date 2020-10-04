@@ -26,6 +26,9 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ActivitiesTiming")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Beverages")
                         .HasColumnType("nvarchar(max)");
 
@@ -88,9 +91,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 
                     b.Property<string>("OtherActivities")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("PriceOfTicket")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Restaurant")
                         .HasColumnType("nvarchar(max)");

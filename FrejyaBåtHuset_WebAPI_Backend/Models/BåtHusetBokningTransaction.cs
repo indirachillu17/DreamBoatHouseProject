@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FrejyaBåtHuset_WebAPI_Backend.Models
 {
@@ -16,6 +17,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         //public string UserName { get; set; }
         
         public int DiscoverBoatHouse { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal BoatTripPrice { get; set; }
         public DateTime BoatTripDate { get; set; }
         public string BoatStartTime { get; set; }
@@ -28,6 +30,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
 
         public string Beverages { get; set; }
         public int NoOfPersons { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal TotalPrice { get; set; }
 
     }
