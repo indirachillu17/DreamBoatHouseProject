@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
     [DbContext(typeof(FrejyaBåtHuset_WebAPI_BackendContext))]
-    [Migration("20200930205547_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20201002130406_BåtHusetBokningTransaction")]
+    partial class BåtHusetBokningTransaction
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,15 +49,23 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("BoatEnd")
+                    b.Property<string>("Beverages")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BoatEndTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BoatStartTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("BoatTripDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("BoatStart")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("BoatTripPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("DiscoverBoatHouse")
                         .HasColumnType("int");
-
 
                     b.Property<string>("OtherActivities")
                         .HasColumnType("nvarchar(max)");
@@ -71,6 +79,54 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.HasKey("BåtHusetBokningID");
 
                     b.ToTable("BåtHusetBokning");
+                });
+
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokningTransaction", b =>
+                {
+                    b.Property<int>("BåtHusetBokningTransactionID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Beverages")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BoatEndTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BoatStartTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("BoatTripDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("BoatTripPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("DiscoverBoatHouse")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NoOfPersons")
+                        .HasColumnType("int");
+
+                    b.Property<string>("OtherActivities")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("PriceOfTicket")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Restaurant")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BåtHusetBokningTransactionID");
+
+                    b.ToTable("BåtHusetBokningTransaction");
                 });
 
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>
