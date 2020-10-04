@@ -14,15 +14,15 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
 
         private ApiHelper apiHelper = new ApiHelper();
 
-        //[BindProperty]
-        //public BåtHusetBokning båtHusetBokning { get; set; }
+        [BindProperty]
+        public BåtHusetBokning båtHusetBokning { get; set; }
         [BindProperty]
         public IList<BåtHusetBokning> listofusers { get; set; }
 
         public async Task OnGet(int id)
         {
             //båtHusetBokning = await apiHelper.GetCallApiAsync<BåtHusetBokning>(GlobalValue.ApiPath + "/BåtHusetBokning/" +id);
-            listofusers = await apiHelper.GetCallApiAsync<IList<BåtHusetBokning>>(GlobalValue.ApiPath + "/BåtHusetBokning");
+            listofusers = await apiHelper.GetCallApiAsync<IList<BåtHusetBokning>>(GlobalValue.ApiPath + "/BåtHusetBokning" );
 
         }
     }

@@ -41,14 +41,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/BåtHusetBokning">BåtHusetBokning</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/AndraActiviteterdetails">AndraActiviteterdetails</a>
-                        </li>
                         @if (IsAdmin)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="./UserDetails/UserDetailsList">Users</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/OtherActivitiesList">OtherAcivitiesList</a>
+                            </li>
+
 
                         }
 

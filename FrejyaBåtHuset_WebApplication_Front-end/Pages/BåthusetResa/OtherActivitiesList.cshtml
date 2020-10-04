@@ -1,0 +1,53 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.OtherActivitiesListModel
+@{
+    ViewData["Title"] = "OtherActivitiesDetailsList";
+}
+
+<h1>OtherActivitiesList</h1>
+
+<p>
+    <a asp-page="AddOtherActivities">Create New</a>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.listofactivitities[0].NameOfactivity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.listofactivitities[0].ActivitiesTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.listofactivitities[0].Price)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listofactivitities)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfactivity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActivitiesTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+            <td>
+
+                <a asp-page="./OtherActivitiesDetails" asp-route-id="@item.AndraaktiviteterID">Details</a> :
+                <a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

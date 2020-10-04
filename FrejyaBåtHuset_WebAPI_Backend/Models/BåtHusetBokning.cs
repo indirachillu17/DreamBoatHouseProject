@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,7 +9,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
 {
     public class BåtHusetBokning
     {
-
         public int BåtHusetBokningID { get; set; }
 
         public int DiscoverBoatHouse { get; set; }
@@ -18,6 +19,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         public string OtherActivities { get; set; }
 
         public string Restaurant { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal PriceOfTicket { get; set; }
         public int NoOfPersons { get; set; }
     }

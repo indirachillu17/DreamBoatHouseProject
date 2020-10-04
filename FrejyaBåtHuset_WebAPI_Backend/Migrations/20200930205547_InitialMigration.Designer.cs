@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
     [DbContext(typeof(FrejyaBåtHuset_WebAPI_BackendContext))]
-    [Migration("20200924084442_UserTableModified")]
-    partial class UserTableModified
+    [Migration("20200930205547_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,14 +28,14 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("NumberOfPersons")
+                    b.Property<string>("ActivitiesTiming")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OtherActivities")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("AndraaktiviteterID");
 
@@ -49,9 +49,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ActivitiesTiming")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("BoatEnd")
                         .HasColumnType("datetime2");
 
@@ -61,8 +58,14 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<int>("DiscoverBoatHouse")
                         .HasColumnType("int");
 
+                    b.Property<int>("NoOfPersons")
+                        .HasColumnType("int");
+
                     b.Property<string>("OtherActivities")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("PriceOfTicket")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Restaurant")
                         .HasColumnType("nvarchar(max)");
@@ -80,9 +83,11 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("EmailId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")

@@ -64,12 +64,12 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         }
         private static void SeedAndraaktiviteterData()
         {
-            List<Andraaktiviteter> andraAktiviteter = new List<Andraaktiviteter>();
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Barn-Activities",Price=450, ActivitiesTiming = "10am-12pm" });
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Spa-Center", Price = 1000, ActivitiesTiming = "14pm-15pm" });
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Fish Pedicure and Manicure", Price = 1500, ActivitiesTiming = "15pm-16pm"});
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Dance Show", Price=750, ActivitiesTiming = "16pm-17pm" });
-            andraAktiviteter.Add(new Andraaktiviteter() {OtherActivities = "Singing Concert", Price=1200, ActivitiesTiming = "18pm-19pm"});
+            List<OtherActivities> andraAktiviteter = new List<OtherActivities>();
+            andraAktiviteter.Add(new OtherActivities() { NameOfactivity = "Barn-Activities",Price=450, ActivitiesTime = "10am-12pm" });
+            andraAktiviteter.Add(new OtherActivities() { NameOfactivity = "Spa-Center", Price = 1000, ActivitiesTime = "14pm-15pm" });
+            andraAktiviteter.Add(new OtherActivities() { NameOfactivity = "Fish Pedicure and Manicure", Price = 1500, ActivitiesTime = "15pm-16pm"});
+            andraAktiviteter.Add(new OtherActivities() { NameOfactivity = "Dance Show", Price=750, ActivitiesTime = "16pm-17pm" });
+            andraAktiviteter.Add(new OtherActivities() { NameOfactivity = "Singing Concert", Price=1200, ActivitiesTime = "18pm-19pm"});
 
             _context.Andraaktiviteter.AddRange(andraAktiviteter);
             _context.SaveChanges();

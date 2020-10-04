@@ -32,6 +32,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
 
         public DbSet<FrejyaBåtHuset_WebAPI_Backend.Models.User> Users { get; set; }
 
-        public DbSet<FrejyaBåtHuset_WebAPI_Backend.Models.Andraaktiviteter> Andraaktiviteter { get; set; }
+        public DbSet<FrejyaBåtHuset_WebAPI_Backend.Models.OtherActivities> Andraaktiviteter { get; set; }
     }
 }

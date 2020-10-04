@@ -19,27 +19,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.Andraaktiviteter", b =>
-                {
-                    b.Property<int>("AndraaktiviteterID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ActivitiesTiming")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OtherActivities")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("AndraaktiviteterID");
-
-                    b.ToTable("Andraaktiviteter");
-                });
-
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokning", b =>
                 {
                     b.Property<int>("BåtHusetBokningID")
@@ -71,6 +50,30 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.HasKey("BåtHusetBokningID");
 
                     b.ToTable("BåtHusetBokning");
+                });
+
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.OtherActivities", b =>
+                {
+                    b.Property<int>("AndraaktiviteterID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActivitiesTime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ActivityType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameOfactivity")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("AndraaktiviteterID");
+
+                    b.ToTable("Andraaktiviteter");
                 });
 
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>

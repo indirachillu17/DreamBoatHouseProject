@@ -1,0 +1,43 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.EditOtherActivitiesModel
+@{
+    ViewData["Title"] = "EditOtherActivities";
+}
+
+<h1>EditOtherActivities</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" asp-for="editotheractivities.AndraaktiviteterID" />
+            <div class="form-group">
+                <label asp-for="editotheractivities.NameOfactivity" class="control-label"></label>
+                <input asp-for="editotheractivities.NameOfactivity" class="form-control" />
+                <span asp-validation-for="editotheractivities.NameOfactivity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="editotheractivities.ActivitiesTime" class="control-label"></label>
+                <input asp-for="editotheractivities.ActivitiesTime" class="form-control" />
+                <span asp-validation-for="editotheractivities.ActivitiesTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="editotheractivities.Price" class="control-label"></label>
+                <input asp-for="editotheractivities.Price" class="form-control" />
+                <span asp-validation-for="editotheractivities.Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./OtherActivitiesList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
