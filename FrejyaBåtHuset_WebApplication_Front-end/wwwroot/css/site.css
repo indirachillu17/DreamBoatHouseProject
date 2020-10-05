@@ -59,8 +59,29 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    margin: 0;
+    padding: 0;
+    background: url(ff8098ff71c30f6a68ee3b8ba9d608b0);
+    background-size: cover;
+}
+.contact-form{
+    width:85%;
+    max-width:600px;
+    background:#f1f1f1;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:30px 40px;
+    border-radius:8px;
+    text-align:center;
+    box-shadow: 0 0 20px #000000b3;
+}
+.contact-form h1{
+    margin-top:0;
+}
+    /* Margin bottom by footer height */
+    /*/margin-bottom: 60px; *
 }
 .footer {
   position: absolute;
