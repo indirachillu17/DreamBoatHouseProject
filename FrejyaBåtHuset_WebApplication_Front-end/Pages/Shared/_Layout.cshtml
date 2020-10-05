@@ -1,7 +1,7 @@
 ﻿@using  Microsoft.AspNetCore.Http;
 @{
     var Role = Context.Session.GetString("Role");
-    bool IsAdmin = false;
+    bool IsAdmin=false;
     bool IsUserLoggedIn = false;
 
     if (Role != null)
@@ -34,41 +34,36 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/BåtHusetBokning">BåtHusetBokning</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/AndraActiviteterdetails">AndraAktiviteterDetaljer</a>
-                        </li>
-
-
-                        @if (IsAdmin)
+                        @if (IsUserLoggedIn)
                         {
+                            @if (IsAdmin)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="./UserDetails/UserDetailsList">Users</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/OtherActivitiesList">OtherAcivitiesList</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/BåtHusetBokning">BåtHusetBokning</a>
+                                </li>
+                            }
+
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="./UserDetails/UserDetailsList">Users</a>
+                                <a class="nav-link text-dark" asp-area="" asp-page="/logout">Logout</a>
                             </li>
 
                         }
-
-                        @if (!IsUserLoggedIn)
+                        else
                         {
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Sign In</a>
                             </li>
                         }
-                        else
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/logout">Logout</a>
-                            </li>
-                        }
-
-
-
                     </ul>
                 </div>
             </div>

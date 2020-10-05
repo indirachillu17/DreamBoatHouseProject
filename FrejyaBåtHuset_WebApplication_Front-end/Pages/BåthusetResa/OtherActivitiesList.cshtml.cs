@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using FrejyaBåtHuset_WebApplication_Front_end.HelperClasses;
+using FrejyaBåtHuset_WebAPI_Backend.Models;
+
+
+namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
+{
+    public class OtherActivitiesListModel : PageModel
+    {
+        private ApiHelper apiHelper = new ApiHelper();
+
+        [BindProperty]
+        public BåtHusetBokning båtHusetBokning { get; set; }
+        [BindProperty]
+        public IList<OtherActivities> listofactivitities { get; set; }
+
+       
+        public async Task OnGet()
+        {
+        
+         listofactivitities = await apiHelper.GetCallApiAsync<IList<OtherActivities>>(GlobalValue.ApiPath + "/Andraaktiviteters");
+
+        }
+    }
+}

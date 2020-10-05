@@ -23,7 +23,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
 
         // GET: api/Andraaktiviteters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Andraaktiviteter>>> GetAndraaktiviteter()
+        public async Task<ActionResult<IEnumerable<OtherActivities>>> GetAndraaktiviteter()
         {
 
             return await _context.Andraaktiviteter.ToListAsync();
@@ -31,7 +31,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
 
         // GET: api/Andraaktiviteters/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Andraaktiviteter>> GetAndraaktiviteter(int id)
+        public async Task<ActionResult<OtherActivities>> GetAndraaktiviteter(int id)
         {
             var andraaktiviteter = await _context.Andraaktiviteter.FindAsync(id);
 
@@ -47,7 +47,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAndraaktiviteter(int id, Andraaktiviteter andraaktiviteter)
+        public async Task<IActionResult> PutAndraaktiviteter(int id, OtherActivities andraaktiviteter)
         {
             if (id != andraaktiviteter.AndraaktiviteterID)
             {
@@ -79,7 +79,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Andraaktiviteter>> PostAndraaktiviteter(Andraaktiviteter andraaktiviteter)
+        public async Task<ActionResult<OtherActivities>> PostAndraaktiviteter(OtherActivities andraaktiviteter)
         {
             _context.Andraaktiviteter.Add(andraaktiviteter);
             await _context.SaveChangesAsync();
@@ -89,7 +89,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
 
         // DELETE: api/Andraaktiviteters/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Andraaktiviteter>> DeleteAndraaktiviteter(int id)
+        public async Task<ActionResult<OtherActivities>> DeleteAndraaktiviteter(int id)
         {
             var andraaktiviteter = await _context.Andraaktiviteter.FindAsync(id);
             if (andraaktiviteter == null)
