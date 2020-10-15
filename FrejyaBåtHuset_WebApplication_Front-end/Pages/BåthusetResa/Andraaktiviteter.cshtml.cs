@@ -9,22 +9,29 @@ using FrejyaBåtHuset_WebAPI_Backend.Models;
 
 
 namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
-{
-    public class OtherActivitiesListModel : PageModel
+{ 
+    public class AndraaktivitieterModel : PageModel
     {
         private ApiHelper apiHelper = new ApiHelper();
 
         [BindProperty]
         public BåtHusetBokning båtHusetBokning { get; set; }
         [BindProperty]
-        public IList<OtherActivities> listofactivitities { get; set; }
+        public IList<Andraaktiviteter> listofactivitities { get; set; }
 
-       
+
+
         public async Task OnGet()
         {
-        
-         listofactivitities = await apiHelper.GetCallApiAsync<IList<OtherActivities>>(GlobalValue.ApiPath + "/Andraaktiviteters");
+            listofactivitities = new List<Andraaktiviteter>();
 
+        listofactivitities = await apiHelper.GetCallApiAsync<IList<Andraaktiviteter>>(GlobalValue.ApiPath + "/Andraaktiviteter" );
+
+
+            
         }
-    }
+
+
+        
+        }
 }

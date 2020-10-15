@@ -1,0 +1,67 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.AndraaktivitieterModel
+@{
+    ViewData["Title"] = "Andraaktiviteter";
+}
+
+<h1>Andraaktiviteter</h1>
+<style>
+    body {
+        /*background-color: #ADD8E6;*/
+        /*background: #ADD8E6, rgb(173,216,230) url("/css/boats1.jpg") no-repeat fixed right;*/
+        /*background: #ADD8E6;*/
+        /*background: #0094ff url("/css/DANCE1.gif") no-repeat fixed bottom;
+        background-size: 190px;
+        background-position: left;*/
+       background-image: url("/css/background2.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        /*background: #ADD8E6, rgb(30,144,255);*/
+    }
+
+   
+</style>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.listofactivitities[0].ActivityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.listofactivitities[0].ActivityTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.listofactivitities[0].Price)
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in @Model.listofactivitities)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActivityTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+
+                <td>
+                    <a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID"></a>
+
+                    @*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
+                    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

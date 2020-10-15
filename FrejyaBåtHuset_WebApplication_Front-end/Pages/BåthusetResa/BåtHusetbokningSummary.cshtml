@@ -1,0 +1,214 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.BåtHusetbokningSummaryModel
+@{
+    ViewData["Title"] = "BåtHusetbokningSummary";
+}
+
+<h1 style="text-align:center">Mitt BåtHusetBokning</h1>
+<style>
+    body {
+        /*background-color: #ADD8E6;*/
+        /*background: #ADD8E6, rgb(173,216,230) url("/css/boats1.jpg") no-repeat fixed right;*/
+        background: #0094ff no-repeat fixed top;
+        
+        /*background-position: right top;
+        /*border: 3px solid black;*/*/
+        /*width: 400px;
+        height: 400px;
+        position: absolute;
+        right: 0;
+        top: 0;*/
+        /*position: absolute;
+        top: 0px;
+        right: 0px;*/
+        /*background-size: 20px ;*/
+        /*height: 5px;
+        /*margin: 5px;*/
+        /*width: 20px;*/
+        /*background-image: url("/css/Boat.jpg") ,none;*/
+    }
+    .table {
+        text-align: center;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+    } 
+    
+</style>
+
+<table id="myTable" class="table" border="1">
+    <thead>
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BåtHusetBokningTransactionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].DiscoverBoatHouse)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatTripPrice)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatStartTime)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatEndTime)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatTripDate)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].OtherActivities)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].Restaurant)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].Beverages)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].NoOfPersons)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].TotalPrice)
+
+            </th>
+
+            @*<th>
+                    @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].Status)
+
+                </th>*@
+        </tr>
+
+
+
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in @Model.båtHusetBokningSummary)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BåtHusetBokningTransactionID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiscoverBoatHouse)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatTripPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatEndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatTripDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OtherActivities)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beverages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfPersons)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>*@
+                <td>
+                    <a asp-page="./BåtHusetbokningSummary" asp-route-id="@item.BåtHusetBokningTransactionID"></a>
+
+                    @*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
+                    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
+                </td>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            </tr>
+        }
+
+
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+    @*<td>
+        <button style="height:60px;width:60px">Continue to Payment </button>
+    </td>*@
+        </tbody>
+</table>
+
+
+@*<table class ="table "cellpadding="0" cellspacing="0" >
+            <tr>
+                <th>@Model.båtHusetBokningSummary[0].UserId</th>
+                <th>@Model.båtHusetBokningSummary[0].BåtHusetBokningTransactionID</th>
+                <th>@Model.båtHusetBokningSummary[0].DiscoverBoatHouse</th>
+                <th>@Model.båtHusetBokningSummary[0].BoatTripPrice</th>
+                <th>@Model.båtHusetBokningSummary[0].BoatStartTime</th>
+                <th>@Model.båtHusetBokningSummary[0].BoatEndTime</th>
+                <th>@Model.båtHusetBokningSummary[0].BoatTripDate</th>
+                <th>@Model.båtHusetBokningSummary[0].OtherActivities</th>
+                <th>@Model.båtHusetBokningSummary[0].Restaurant</th>
+                <th>@Model.båtHusetBokningSummary[0].Beverages</th>
+                <th>@Model.båtHusetBokningSummary[0].NoOfPersons</th>
+                <th>@Model.båtHusetBokningSummary[0].TotalPrice</th>
+                <th>@Model.båtHusetBokningSummary[0].Status</th>
+
+            </tr>
+            @foreach (var item in Model.båtHusetBokningSummary)
+            {
+                <tr>
+                    <td>@item.UserId</td>
+                    <td>@item.BåtHusetBokningTransactionID</td>
+                    <td>@item.DiscoverBoatHouse</td>
+                    <td>@item.BoatTripPrice</td>
+                    <td>@item.BoatStartTime</td>
+                    <td>@item.BoatEndTime</td>
+                    <td>@item.BoatTripDate</td>
+                    <td>@item.OtherActivities</td>
+                    <td>@item.Restaurant</td>
+                    <td>@item.Beverages</td>
+                    <td>@item.NoOfPersons</td>
+                    <td>@item.TotalPrice</td>
+                    <td>@item.Status</td>
+                </tr>
+            }
+
+
+        </table>
+    </body>
+    </html>*@

@@ -1,0 +1,58 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.AddAndraaktiviteterModel
+@{
+    ViewData["Title"] = "AddAndraaktiviteter";
+}
+
+<h1>AddAndraaktiviteter</h1>
+<p>
+       <a asp-page="AddAndraaktiviteter">Create New</a>
+
+    </p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="newotheractivities.ActivityName" class="Control-Label"></label>
+                <span class="text-danger">*</span>
+                <input asp-for="newotheractivities.ActivityName" class="form-control" />
+                <span asp-validation-for="newotheractivities.ActivityName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="newotheractivities.ActivityTime" class="Control-Label"></label>
+                <span class="text-danger">*</span>
+                <input asp-for="newotheractivities.ActivityTime" class="form-control" />
+                <span asp-validation-for="newotheractivities.ActivityTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="newotheractivities.Price" class="Control-Label"></label>
+                <span class="text-danger">*</span>
+                <input asp-for="newotheractivities.Price" class="form-control" />
+                <span asp-validation-for="newotheractivities.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-page="./Andraaktiviteter detaljer">Back To List</a>
+    <a asp-page="./Andraaktiviteter detaljer">Details</a> :
+    <a asp-page="./EditOtherActivities">Edit</a>
+
+    <a asp-page="./Andraaktiviteter detaljer"  >Details</a> :
+        <a asp-page="./EditOtherActivities" >Edit</a>
+
+
+    <a asp-page="./Andraaktiviteter detaljer" >Details</a> :
+        <a asp-page="./EditOtherActivities" >Edit</a>
+
+</div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+
