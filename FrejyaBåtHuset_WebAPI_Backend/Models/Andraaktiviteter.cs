@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace FrejyaBåtHuset_WebAPI_Backend.Models
 {
-    public class OtherActivities
+    public class Andraaktiviteter
     {
         [Key]
         public int AndraaktiviteterID { get; set; }
-        public string NameOfactivity { get; set; }
+        public string ActivityName { get; set; }
+        
+        public string ActivityTime { get; set; }
+
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
-        public string ActivitiesTime { get; set; }
-        public string ActivityType { get; set; }
+       
+        //public string ActivityType { get; set; }
     }
 }

@@ -28,5 +28,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
 
         public string Beverages { get; set; }
 
+        //public int NoOfPersons { get; set; }
+
     }
 }

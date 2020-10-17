@@ -32,40 +32,58 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link active" asp-area="" asp-page="/Index">Home</a>
                         </li>
+
+
                         @if (IsUserLoggedIn)
                         {
                             @if (IsAdmin)
                             {
+                                
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-page="./UserDetails/UserDetailsList">Users</a>
                                 </li>
+                               
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/OtherActivitiesList">OtherAcivitiesList</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="./AndraaktiviteterInfo/AddandEditAndraaktiviteter">Andraaktiviteter detaljer</a>
                                 </li>
-                            }
-                            else
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="./BåthusetResa/BåtHusetBokning">BåtHusetBokning</a>
-                                </li>
-                            }
+                              
+                                    }
+                                    else
+                                    {
+
+
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark"  asp-area="" asp-page="/BåthusetResa/BåtHusetBokning">BåtHusetBokning</a>
+                                        </li>
+
+
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-page="/BåthusetResa/Andraaktiviteter">Andraaktiviteter detaljer</a>
+                                        </li>
+
+
+
+                                        }
+
+
+
 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/logout">Logout</a>
                             </li>
 
-                        }
-                        else
-                        {
-
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Sign In</a>
-                            </li>
-                        }
+}
+                                                    else
+                                                    {
+                                                    Console.WriteLine("User is NOT logged in");
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Login">Sign In</a>
+                        </li>
+                                                    }
                     </ul>
-                </div>
+                    </div>
             </div>
         </nav>
     </header>

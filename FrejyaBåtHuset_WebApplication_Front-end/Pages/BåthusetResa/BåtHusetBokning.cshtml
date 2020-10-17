@@ -7,162 +7,108 @@
 }
 
 <h1>BåtHusetBokning</h1>
-<form method="post">
-    <div asp-validation-summary="All"></div>
+   
 
-    <input type="hidden" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
+<style>
 
-    <label asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></label>
-    <input asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse" /><br />
-    <span asp-validation-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></span><br />
+    body {
+        background-color: #00BFFF;
+        background-image: url("/css/boats1.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: right top;
+        /*background-color: #ADD8E6;*/
+        /*background: #ADD8E6, rgb(173,216,230) url("/css/boats1.jpg") no-repeat fixed right;*/
+        /*background: #0094ff url("/css/boats1.jpg") no-repeat fixed right;
+        top: 5px;*/
+        /*position: absolute;*/
+        /*background-attachment: fixed;*/
+        /*background-image: url("/css/images1.jpg");background-size: cover; background-attachment: fixed;
+        border: 3px solid green;*/
+    }
+    .Inputdata {
+        /*background: #ffffff;*/
+    }
 
-    <label asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
-    <input asp-for="@Model.båtHusetBokning[0].BoatTripPrice" /><br />
-    <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripPrice"></span><br />
+    .Inputdata input{
+        margin-left:6em;
+    }
 
-    <label asp-for="@Model.båtHusetBokning[0].BoatStartTime"></label>
-    <input asp-for="@Model.båtHusetBokning[0].BoatStartTime" /><br />
-    <span asp-validation-for="@Model.båtHusetBokning[0].BoatStartTime"></span><br />
+    /*.left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        
+    }*/
+    
+</style>
+<form method="post" >
+
+    <div class="Inputdata" >
+        <div asp-validation-summary="All"></div>
+
+        <input type="hidden" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
+
+        <label asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></label> 
+        <input style="margin-left: 50px"; asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse" readonly /><br />
+        <span asp-validation-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></span><br />
+
+        <label  asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
+        <input asp-for="@Model.båtHusetBokning[0].BoatTripPrice" readonly /><br />
+        <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripPrice"></span><br />
+
+        <label asp-for="@Model.båtHusetBokning[0].BoatStartTime"></label>
+        <input style="margin-left: 90px"; asp-for="@Model.båtHusetBokning[0].BoatStartTime" readonly /><br />
+        <span asp-validation-for="@Model.båtHusetBokning[0].BoatStartTime"></span><br />
 
 
-    <label asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
-    <input asp-for="@Model.båtHusetBokning[0].BoatEndTime" /><br />
-    <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
+        <label asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
+        <input style="margin-left: 100px"; asp-for="@Model.båtHusetBokning[0].BoatEndTime" readonly /><br />
+        <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
 
-    <label asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
-    <input type="date" asp-for="@Model.båtHusetBokning[0].BoatTripDate" /><br />
-    <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripDate"></span><br />
+        <label asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
+        <input  style="margin-left: 100px";  height:500px; type="date" asp-for="@Model.båtHusetBokning[0].BoatTripDate" /><br />
+        <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripDate"></span><br />
+    </div>
 
     <div>
-        <form method="post">
-            <b> <legend>Other Activities</legend></b>
-            @foreach (var item in @Model.båtHusetBokning)
-            {
 
-                //<input name="areChecked" type="checkbox" value="{{@item.OtherActivities+' ' + @item.ActivitiesTiming' ' + @item.PriceOfTicket}}" />@item.OtherActivities <br />
-                //<input name="areChecked" type="checkbox" value="@item.OtherActivities " />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
-                <input name="areChecked" type="checkbox" value="@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket" />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
+        <Legend><b> Other Activities</b></Legend>
 
-            }
-            <br />
-            <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
-            <select name="lstRestaurant" id="listbox" multiple="multiple">
-                @foreach (var item in Model.båtHusetBokning)
-                {
-                    <option value="@item.Restaurant">
-                        @item.Restaurant
-                    </option>
-
-                }
-            </select>
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <label asp-for="@Model.båtHusetBokning[0].Beverages"></label>
-            <select name="lstBeverages" id="listbox" multiple="multiple">
-                @foreach (var item in Model.båtHusetBokning)
-                {
-                    <option value="@item.Beverages">
-                        @item.Beverages
-                    </option>
-
-                }
-            </select>
-
-            <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            @*@foreach (var item in @Model.båtHusetBokning)
-            {
-
-                //<input name="areChecked" type="checkbox" value="{{@item.OtherActivities+' ' + @item.ActivitiesTiming' ' + @item.PriceOfTicket}}" />@item.OtherActivities <br />
-                //<input name="areChecked" type="checkbox" value="@item.OtherActivities " />@item.OtherActivities @item.ActivitiesTiming @item.PriceOfTicket <br />
-                <input name="ticketPrice" type="text" value="@item. @item.ActivitiesTiming @item.PriceOfTicket" />@item.PriceOfTicket <br />
-
-            }*@
-
-            <button>Submit</button>
-
-
-        </form>
-    </div>
-
-    @*<div>
-        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        @foreach (var item in @Model.båtHusetBokning)
         {
-            <b>Select Tea Type: </b><br />
-            @Html.ListBoxFor(x => x.båtHusetBokning[0].Restaurant, Model.båtHusetBokning, new { style = "width:200px" })
-            <br />
-            <input type="submit" value="submit" />
-        }
-    </div>*@
-
-    @*<div>
-        <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
-        <select name="listbox" id="listbox" multiple="multiple" asp-for="@Model.båtHusetBokning[0].Restaurant" /><br />
-        <span asp-validation-for="@Model.båtHusetBokning[0].Restaurant"></span><br />
-        @foreach (var item1 in @Model.båtHusetBokning)
-        {
-            <option value="@item1.Restaurant">
-                @item1.Restaurant
-            </option>
+            <input name="areChecked" style="margin-bottom: 20px;" style1="margin-left: 100.25px" ; padding-left: 20px; type="checkbox" value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />
+            <label> @item.OtherActivities  @item.ActivitiesTiming  @item.PriceOfTicket </label><br>
+            @*<input name="areChecked" style="margin-bottom: 20px;" padding-left: 20px;  type="checkbox"  value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />@item.OtherActivities   @item.ActivitiesTiming  @item.PriceOfTicket<br>*@
 
         }
-        </select>
-
-    </div>*@
-
-
-    @*<div>
-        <button>Click</button>
-    </div>*@
-    @*<div>
-        <input type="submit" value="Submit" class="btn btn-primary" />
-    </div>
-    </div>*@
-    @**@
-    @*<div>
-            <label asp-for="@Model.båtHusetBokning[0].OtherActivities"></label>
-            <input type="checkbox" name="chk3" value="@Model.båtHusetBokning[0].OtherActivities: 10am-11am 350Kr" />
-            <input type="checkbox" name="chk3" value="@Model.båtHusetBokning[0].OtherActivities: 11am-12pm 1000Kr" />
-
-        </div>*@
-    @*@
-            <input type="checkbox" id="checkbox" name="AreChecked" value="@item.OtherActivities">
-            <label asp-for="@Model.båtHusetBokning[0].OtherActivities"></label>
-
-        <span asp-validation-for="@Model.båtHusetBokning[0].OtherActivities"></span><br />*@
-
-
-
-    @*<div>
-            <input name="Spa-Center " id="checkbox1" type="checkbox" />
-            <label for="Spa-Center"> Spa-Center  11am-12pm  1000Kr  </label>
-            <span asp-validation-for="@Model.båtHusetBokning[0].OtherActivities"></span><br />
-
-        </div>*@
-
-    @*<div>
+        <br />
         <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
-        <select name="listbox" id="listbox" multiple="multiple">
+        <select name="lstRestaurant" style="margin-left: 110px" ; id="listbox" multiple="multiple">
             @foreach (var item in Model.båtHusetBokning)
             {
-
                 <option value="@item.Restaurant">
                     @item.Restaurant
                 </option>
 
             }
         </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
 
-
-    </div>*@
-
-    @*<div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <b>
+            <label style="margin-left:-5px" ;>*Complimentary drinks no charges</label>
+        </b>
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
         <label asp-for="@Model.båtHusetBokning[0].Beverages"></label>
-        <select name="listbox" id="listbox" multiple="multiple">
+        <select name="lstBeverages" style="margin-left:120px" ; id="listbox" multiple="multiple">
             @foreach (var item in Model.båtHusetBokning)
             {
-
                 <option value="@item.Beverages">
                     @item.Beverages
                 </option>
@@ -170,122 +116,23 @@
             }
         </select>
 
-    </div>
-    <div>
-        <label name="NoOfPersons"></label>
-        <select id="NoOfPersons" name="NoOfPersons">
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-            <option value=6>6</option>
-            <option value=7>7</option>
-            <option value=8>8</option>
-            <option value=9>9</option>
-            <option value=10>10</option>
 
-        </select>
-    </div>
-    <div>
-        <label asp-for="@Model.båtHusetBokning[0].PriceOfTicket"></label>
-        <input asp-for="@Model.båtHusetBokning[0].BoatEndTime" /><br />
-        <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
-    </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br />
+        <br />
+        <b>
+            <text style="margin-left: -5px" ;>*Max limit 50 people</text>
+        </b>
+        <br />
+        <br />
+        <label asp-for="@Model.NoOfPersons"></label>
+        <input style="margin-left: 90.55px" ; asp-for="@Model.NoOfPersons" type="number" min="1" max="50" /><br />
+        <span asp-validation-for="@Model.NoOfPersons"></span><br />
 
-    <label></label>
-        <input type =checkbox  name="Barn Activities"   /><br />
-            Time="10am-12pm " Price="450Kr"
-        <span asp-validation-for="@Model.båtHusetBokning[0].BoatStartTime"></span><br />
-
-
-
-
-    <label name="BoatTripDate">BoatTripDate</label>
-        <input type="date" id="meeting-time" name="BoatTripDate" /><br />
-        <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
-
-    <label asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
-        <input asp-for="@Model.båtHusetBokning[0].BoatEndTime" /><br />
-        <label asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
-        <textarea asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></textarea><br />
-
-
-
-    <div>
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.båtHusetBokning[0].DiscoverBoatHouse)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.båtHusetBokning[0].DiscoverBoatHouse)
-
-                </dd>
-            </dl>
-
-        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
         <div>
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.båtHusetBokning[0].BoatTripPrice)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.båtHusetBokning[0].BoatTripPrice)
+            <button style="margin-left: 100.25px" ;>Submit</button>
 
-                </dd>
-            </dl>
-
+            <input class="button" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
         </div>
-        <div>
-            <dl class="row">
-                <dt class="col-sm-2">
-                    <b> BoatTripDate</b>
-                    <input type="date" id="meeting-time"
-                           name="BoatTripDate">
-                </dt>
-
-            </dl>
-
-
-        </div>
-        <div>
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.båtHusetBokning[0].BoatStartTime)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.båtHusetBokning[0].BoatStartTime)*@
-
-                @*</dd>
-            </dl>
-
-        </div>*@
-    @*<div>
-            <dl class="row">
-                <dt class="col-sm-2">
-                    @Html.DisplayNameFor(model => model.båtHusetBokning[0].BoatEndTime)
-                </dt>
-                <dd class="col-sm-10">
-                    @Html.DisplayFor(model => model.båtHusetBokning[0].BoatEndTime)
-
-                </dd>
-            </dl>
-
-        </div>*@
-
-    @*<div asp-validation-summary="All"></div>
-
-        <input type="hidden" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
-
-        <label asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></label>
-        <input asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse" />
-        <span asp-validation-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></span><br />
-
-        <label asp-for="@Model.båtHusetBokning[0].BoatStartTime"></label>
-        <input asp-for="@Model.båtHusetBokning[0].BoatStartTime" /><br />
-
-        <label asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
-        <textarea asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></textarea><br />*@
 </form>
-
-

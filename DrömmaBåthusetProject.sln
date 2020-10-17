@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrejyaBåtHuset_WebAPI_Backend", "FrejyaBåtHuset_WebAPI_Backend\FrejyaBåtHuset_WebAPI_Backend.csproj", "{CACD84CD-E29C-4940-9A0F-01110C215BEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrömmaBåtHuset_WebAPI_Backend", "FrejyaBåtHuset_WebAPI_Backend\DrömmaBåtHuset_WebAPI_Backend.csproj", "{CACD84CD-E29C-4940-9A0F-01110C215BEF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrejyaBåtHuset_WebApplication_Front-end", "FrejyaBåtHuset_WebApplication_Front-end\FrejyaBåtHuset_WebApplication_Front-end.csproj", "{EE7C916A-208C-49E9-8EBC-5E483A0D940C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrömmaBåtHuset_WebApplication_Front-end", "FrejyaBåtHuset_WebApplication_Front-end\DrömmaBåtHuset_WebApplication_Front-end.csproj", "{EE7C916A-208C-49E9-8EBC-5E483A0D940C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -32,6 +32,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
         public int NoOfPersons { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal TotalPrice { get; set; }
+        //public string Status { get; set; }
 
     }
 }

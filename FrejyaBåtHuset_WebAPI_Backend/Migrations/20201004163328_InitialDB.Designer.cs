@@ -118,8 +118,8 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<string>("ActivitiesTime")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ActivityType")
-                        .HasColumnType("nvarchar(max)");
+                    //b.Property<string>("ActivityType")
+                    //    .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameOfactivity")
                         .HasColumnType("nvarchar(max)");

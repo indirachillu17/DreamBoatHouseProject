@@ -14,7 +14,7 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.Login
     {
         private ApiHelper apiHelper = new ApiHelper();
 
-       
+
         public string Message { get; set; }
 
         [BindProperty]
@@ -31,13 +31,15 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.Login
 
             var user = await apiHelper.PostCallApiAsync<User>(GlobalValue.ApiPath + "/user/IsValidUser", login);
 
-            if(user != null)
+            if (user != null)
             {
                 HttpContext.Session.SetString("Id", user.Id.ToString());
                 HttpContext.Session.SetString("Name", user.UserName);
                 HttpContext.Session.SetString("Role", user.UserType);
 
-                return RedirectToPage("../privacy");
+                return RedirectToPage("/BåthusetResa/BåtHusetBokning");
+
+
             }
             else
             {
@@ -63,8 +65,10 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.Login
 
 
 
-}
 
-}
+        }
+
+    }
+
 
 

@@ -13,10 +13,10 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                 {
                     AndraaktiviteterID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NameOfactivity = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ActivitiesTime = table.Column<string>(nullable: true),
-                    ActivityType = table.Column<string>(nullable: true)
+                    ActivityName = table.Column<string>(nullable: true),
+                    ActivityTime = table.Column<string>(nullable: true),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    //ActivityType = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -39,6 +39,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     Restaurant = table.Column<string>(nullable: true),
                     PriceOfTicket = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Beverages = table.Column<string>(nullable: true)
+                    //NoOfPersons = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,7 +62,8 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     Restaurant = table.Column<string>(nullable: true),
                     Beverages = table.Column<string>(nullable: true),
                     NoOfPersons = table.Column<int>(nullable: false),
-                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    TotalPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                   
                 },
                 constraints: table =>
                 {
@@ -87,6 +89,8 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+
+
             migrationBuilder.DropTable(
                 name: "Andraaktiviteter");
 

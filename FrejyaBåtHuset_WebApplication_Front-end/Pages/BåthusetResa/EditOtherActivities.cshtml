@@ -11,14 +11,14 @@
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="editotheractivities.AndraaktiviteterID" />
             <div class="form-group">
-                <label asp-for="editotheractivities.NameOfactivity" class="control-label"></label>
-                <input asp-for="editotheractivities.NameOfactivity" class="form-control" />
-                <span asp-validation-for="editotheractivities.NameOfactivity" class="text-danger"></span>
+                <label asp-for="editotheractivities.ActivityName" class="control-label"></label>
+                <input asp-for="editotheractivities.ActivityName" class="form-control" />
+                <span asp-validation-for="editotheractivities.ActivityName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="editotheractivities.ActivitiesTime" class="control-label"></label>
-                <input asp-for="editotheractivities.ActivitiesTime" class="form-control" />
-                <span asp-validation-for="editotheractivities.ActivitiesTime" class="text-danger"></span>
+                <label asp-for="editotheractivities.ActivityTime" class="control-label"></label>
+                <input asp-for="editotheractivities.ActivityTime" class="form-control" />
+                <span asp-validation-for="editotheractivities.ActivityTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="editotheractivities.Price" class="control-label"></label>
@@ -34,7 +34,7 @@
 </div>
 
 <div>
-    <a asp-page="./OtherActivitiesList">Back to List</a>
+    <a asp-page="./Andraaktiviteter detaljer">Back to List</a>
 </div>
 
 @section Scripts {
