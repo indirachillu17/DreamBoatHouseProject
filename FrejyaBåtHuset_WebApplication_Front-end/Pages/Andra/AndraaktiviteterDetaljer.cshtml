@@ -1,0 +1,36 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.AndraaktiviteterDetaljerModel
+@{
+    ViewData["Title"] = "AndraaktiviteterDetaljer";
+}
+
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.otheractivitiesdetails.ActivityName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.otheractivitiesdetails.ActivityName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.otheractivitiesdetails.ActivityTime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.otheractivitiesdetails.ActivityTime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.otheractivitiesdetails.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.otheractivitiesdetails.Price)
+        </dd>
+
+    </dl>
+</div>
+<div>   
+    <a asp-page="/Andra/EditAndraaktiviteter" asp-route-id="@Model.otheractivitiesdetails.AndraaktiviteterID">Edit</a> :
+    <a asp-page="/Andra/AndraaktiviteterList">Back to List</a>
+</div>
+
+

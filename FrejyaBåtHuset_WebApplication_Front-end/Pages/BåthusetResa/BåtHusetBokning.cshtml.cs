@@ -147,9 +147,9 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
             //}
             //if (userDetails.EmailId == "indiravinoth17@gmail.com" && userDetails.Password == "indira)
             ////string Message;
-            var a = await apiHelper.PostCallApiAsync<BåtHusetBokningTransaction>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction", båtHusetBokningTransaction);
+            var booking = await apiHelper.PostCallApiAsync<BåtHusetBokningTransaction>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction", båtHusetBokningTransaction);
             
-            return RedirectToPage("./BåtHusetbokningSummary");
+            return RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID });
             //return RedirectToPage("./BåtHusetBokning");
             //HttpContext.Session.SetString("Name", userDetails.UserName);
             //HttpContext.Session.SetString("Role", userDetails.UserType);

@@ -48,14 +48,10 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.HelperClasses
             await httpClient.PutAsync(Url, stringContent);
         }
 
-        public async Task DeleteCallApiAsync<T>(string Url, T data)
+        public async Task DeleteCallApiAsync<T>(string Url)
         {
             HttpClient httpClient = new HttpClient();
-            StringContent stringContent = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-
             var responseMessage = await httpClient.DeleteAsync(Url);
-
-            
         }
     }
 }

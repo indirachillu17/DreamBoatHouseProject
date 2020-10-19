@@ -19,10 +19,9 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         //{
         //}
 
-        ////protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        ////{
-        ////           // optionsBuilder.UseSqlServer("server=localhost;userid=root;password=root;database=rapidmanagementdb");
-        ////}
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //}
         //public FrejyaBåtHuset_WebAPI_BackendContext()
         //{
 

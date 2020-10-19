@@ -1,5 +1,5 @@
 ﻿@page
-@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.AndraaktivitieterModel
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.AndraaktivitieterListModel
 @{
     ViewData["Title"] = "Andraaktiviteter";
 }
@@ -55,10 +55,13 @@
                 </td>
 
                 <td>
-                    <a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID"></a>
+                    <a asp-page="./Andraaktiviteterdetaljer" asp-route-id="@item.AndraaktiviteterID">Detaljer</a> |
+                    <a asp-page="./EditAndraaktiviteter" asp-route-id="@item.AndraaktiviteterID">Edit</a> |
+                    <a asp-page="./AndraaktiviteterDelete" asp-route-id="@item.AndraaktiviteterID">Delete</a>
 
-                    @*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
-                    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
+                    <!--@*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
+    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
+    -->
                 </td>
             </tr>
         }

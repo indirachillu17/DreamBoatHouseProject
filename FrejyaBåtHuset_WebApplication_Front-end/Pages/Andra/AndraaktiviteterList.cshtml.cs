@@ -10,7 +10,7 @@ using FrejyaBåtHuset_WebAPI_Backend.Models;
 
 namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
 { 
-    public class AndraaktivitieterModel : PageModel
+    public class AndraaktivitieterListModel : PageModel
     {
         private ApiHelper apiHelper = new ApiHelper();
 
@@ -25,7 +25,7 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
         {
             listofactivitities = new List<Andraaktiviteter>();
 
-        listofactivitities = await apiHelper.GetCallApiAsync<IList<Andraaktiviteter>>(GlobalValue.ApiPath + "/Andraaktiviteter" );
+        listofactivitities = await apiHelper.GetCallApiAsync<IList<Andraaktiviteter>>(GlobalValue.ApiPath + "/Andraaktiviteter");
 
 
             
