@@ -18,6 +18,7 @@
         /*background-color: #ADD8E6;*/
         /*background: #ADD8E6, rgb(173,216,230) url("/css/boats1.jpg") no-repeat fixed right;*/
         background-color: #00BFFF;
+        background-position: right 45px bottom;
         /*background-position: right top;
         /*border: 3px solid black;*/
         /*width: 400px;
@@ -36,10 +37,14 @@
     }
     .table {
         text-align: center;
-       
         text-decoration-color:darkgrey;
         /*grid-column: 1/ span 2;
         grid-row: 1 / span 2;*/
+    }
+    .button1 {
+        position: absolute;
+        right: 30%;
+        bottom: 30%;
     }
     
 </style>
@@ -156,8 +161,8 @@
                     @Html.DisplayFor(modelItem => item.TotalPrice)
                 </td>
                 @*<td>
-                        @Html.DisplayFor(modelItem => item.Status)
-                    </td>*@
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>*@
                 <td>
                     <a asp-page="./BåtHusetbokningSummary" asp-route-id="@item.BåtHusetBokningTransactionID"></a>
 
@@ -173,11 +178,14 @@
 
 
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+       
+    <div class="button1">
+        <button style="height:80px;width:80px" position="center">Continue to Payment </button>
+    </div>
+      
 
-    @*<td>
-        <button style="height:60px;width:60px">Continue to Payment </button>
-    </td>*@
-        </tbody>
+    </tbody>
 </table>
 
 
