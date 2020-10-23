@@ -37,7 +37,10 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.Login
                 HttpContext.Session.SetString("Name", user.UserName);
                 HttpContext.Session.SetString("Role", user.UserType);
 
-                return RedirectToPage("/BåthusetResa/BåtHusetBokning");
+                if (user.UserType.ToLower() == "admin")
+                    return RedirectToPage("/Andra/AndraaktiviteterList");
+                else
+                    return RedirectToPage("/BåthusetResa/BåtHusetBokning");
 
 
             }

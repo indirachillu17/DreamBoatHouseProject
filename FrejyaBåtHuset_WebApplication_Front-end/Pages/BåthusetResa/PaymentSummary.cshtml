@@ -1,0 +1,52 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.PaymentSummaryModel
+@{
+    ViewData["Title"] = "BåtHusetbokningSummary";
+}
+    <div class="card" style="width:650px;margin:60px auto;">
+        <div class="card-header" style="text-align:center">
+            <strong>Payment Summary</strong>
+        </div>
+        
+        <div class="card-body">
+            <div class="alert alert-primary" role="alert">
+                Payment done successfully. Here are your booking details.
+            </div>
+            <dl class="row">
+                <dt class="col-sm-4">
+                    Booking Id
+                </dt>
+                <dd class="col-sm-5">
+                    @Html.DisplayFor(model => model.båtHusetBokningSummary.BåtHusetBokningTransactionID)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.båtHusetBokningSummary.BoatTripDate)
+                </dt>
+                <dd class="col-sm-5">
+                    @Html.DisplayFor(model => model.båtHusetBokningSummary.BoatTripDate)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.båtHusetBokningSummary.BoatTripPrice)
+                </dt>
+                <dd class="col-sm-5">
+                    @Html.DisplayFor(model => model.båtHusetBokningSummary.BoatTripPrice)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.båtHusetBokningSummary.NoOfPersons)
+                </dt>
+                <dd class="col-sm-5">
+                    @Html.DisplayFor(model => model.båtHusetBokningSummary.NoOfPersons)
+                </dd>
+                <dt class="col-sm-4">
+                    @Html.DisplayNameFor(model => model.båtHusetBokningSummary.TotalPrice)
+                </dt>
+                <dd class="col-sm-5">
+                    @Html.DisplayFor(model => model.båtHusetBokningSummary.TotalPrice)
+                </dd>
+            </dl>
+
+            @*<a asp-page="./BåtHusetbokningSummary">Show all my bookings</a>*@
+            <a asp-page="./UserAllTransactiondetails">Show all my bookings</a> |
+            <a href="" onclick="window.print();">Print</a>
+        </div>
+        </div>  

@@ -42,11 +42,11 @@
                             {
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="./UserDetails/UserDetailsList">Users</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/UserDetails/UserDetailsList">Users</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="./AndraaktiviteterInfo/AddandEditAndraaktiviteter">Andraaktiviteter detaljer</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Andra/AndraaktiviteterList">AndraaktiviteterList</a>
                                 </li>
 
                             }
@@ -66,7 +66,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-page="/BåthusetResa/AboutUs"> AboutUs</a>
                                 </li>
-                               
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/BåthusetResa/Feedback"> FeedBack</a>
+                                </li>
 
                                                     }
 
@@ -95,12 +97,6 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - FrejyaBåtHuset_WebApplication_Front_end - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

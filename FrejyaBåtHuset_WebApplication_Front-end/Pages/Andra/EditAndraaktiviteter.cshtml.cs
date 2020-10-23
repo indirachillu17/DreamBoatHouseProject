@@ -9,14 +9,15 @@ using FrejyaBåtHuset_WebAPI_Backend.Models;
 
 namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
 {
-    public class AddAndraaktiviteterModel : PageModel
+    public class EditAndraaktiviteterModel : PageModel
     {
         private ApiHelper apiHelper = new ApiHelper();
+
         [BindProperty]
-        public Andraaktiviteter newotheractivities{ get; set; }
-        public void OnGet()
+        public Andraaktiviteter editotheractivities { get; set; }
+        public async Task OnGet(int id)
         {
-            newotheractivities = new Andraaktiviteter();
+            editotheractivities = await apiHelper.GetCallApiAsync<Andraaktiviteter>(GlobalValue.ApiPath + "/Andraaktiviteter/" + id);
         }
         public async Task<IActionResult> OnPostAsync(int id)
         {
@@ -25,12 +26,9 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
                 return Page();
 
             }
-            var b = await apiHelper.PostCallApiAsync<Andraaktiviteter>(GlobalValue.ApiPath + "/Andraaktiviteters", newotheractivities);
+            await apiHelper.PutCallApiAsync<Andraaktiviteter>(GlobalValue.ApiPath + "/Andraaktiviteter/" + id,editotheractivities);
 
-            return RedirectToPage("./AddAndraaktiviteter");
-
+            return RedirectToPage("./AndraaktiviteterList");
         }
-
-
     }
 }

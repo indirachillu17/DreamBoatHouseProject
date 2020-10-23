@@ -1,0 +1,72 @@
+﻿@page
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.FeedbackModel
+@{
+    ViewData["Title"] = "Feedback";
+}
+
+<h1>Feedback</h1>
+<br>
+
+<style>
+    body {
+        background-color: #87CEFA;
+    }
+    /*.container {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+    }*/
+
+</style>
+<form method="post">
+    <div class="container">
+
+        <div class="row">
+            <label style="color: darkblue">1.How was your overall experience at the boathousetrip?</label><br>
+
+        </div>
+        <div class="row">
+            <label class="radio-line"> <input type="radio" name="experience" value="Better"> Better</label>
+            <label class="radio-line"> <input type="radio" name="experience" value="Best"> Best</label>
+            <label class="radio-line"> <input type="radio" name="experience" value="Ok"> Ok</label>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container1">
+        <div class="row">
+            <label style="color: darkblue">2.What was your best experience at the båthusettrip??</label>
+            <br />
+        </div>
+        <div class="row">
+            <label class="radio-line"> <input type="radio" name="experience1" value="BoatTrip"> BoatTrip</label>
+            <label class="radio-line"> <input type="radio" name="experience1" value="OtherActivities"> OtherActivities</label>
+            <label class="radio-line"> <input type="radio" name="experience1" value="Food"> Food</label>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container2">
+        <div class="row">
+            <label style="color: darkblue"> 3.Any Suggestions/Comments??</label>
+            <br />
+        </div>
+
+        <div class="row">
+            <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+
+    </textarea>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="container3">
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+    </div>
+</form>

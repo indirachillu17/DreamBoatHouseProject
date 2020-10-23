@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using FrejyaBåtHuset_WebAPI_Backend.Models;
 
+
 namespace FrejyaBåtHuset_WebAPI_Backend.Data
 {
     public class FrejyaBåtHuset_WebAPI_BackendContext : DbContext
@@ -19,10 +20,9 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         //{
         //}
 
-        ////protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        ////{
-        ////           // optionsBuilder.UseSqlServer("server=localhost;userid=root;password=root;database=rapidmanagementdb");
-        ////}
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //}
         //public FrejyaBåtHuset_WebAPI_BackendContext()
         //{
 
@@ -35,5 +35,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
         public DbSet<FrejyaBåtHuset_WebAPI_Backend.Models.Andraaktiviteter> Andraaktiviteter { get; set; }
 
         public DbSet<FrejyaBåtHuset_WebAPI_Backend.Models.BåtHusetBokningTransaction> BåtHusetBokningTransaction { get; set; }
+        public DbSet<FrejyaBåtHuset_WebAPI_Backend.Models.FeedBack> FeedBack { get; set; }
     }
 }

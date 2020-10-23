@@ -4,20 +4,20 @@
     ViewData["Title"] = "BåtHusetbokningSummary";
 }
 
-<h1 style="text-align:center" >Mitt BåtHusetBokning</h1>
+<h1 style="text-align:center">Mitt BåtHusetBokning</h1>
 
 <style>
     /*header {
         border: 1px solid #B7B7B7;
         padding: 30px;
-        background-color: #e3d0e6;
+        background-color: #e3d
         border-radius: 0 3px 3px 3px;
     }*/
 
     body {
         /*background-color: #ADD8E6;*/
         /*background: #ADD8E6, rgb(173,216,230) url("/css/boats1.jpg") no-repeat fixed right;*/
-        background-color: #00BFFF;
+        background-color: #87CEFA;
         background-position: right 45px bottom;
         /*background-position: right top;
         /*border: 3px solid black;*/
@@ -35,74 +35,75 @@
         /*width: 20px;*/
         /*background-image: url("/css/Boat.jpg") ,none;*/
     }
+
     .table {
         text-align: center;
-        text-decoration-color:darkgrey;
+        text-decoration-color: darkgrey;
         /*grid-column: 1/ span 2;
         grid-row: 1 / span 2;*/
     }
+
     .button1 {
         position: absolute;
         right: 30%;
         bottom: 30%;
     }
-    
 </style>
 
 <table id="myTable" class="table" border="1">
-    <thead >
+    <thead>
 
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].UserId)
+                @Html.DisplayNameFor(model => Model.booking.UserId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BåtHusetBokningTransactionID)
+                @Html.DisplayNameFor(model => Model.booking.BåtHusetBokningTransactionID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].DiscoverBoatHouse)
-
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatTripPrice)
+                @Html.DisplayNameFor(model => Model.booking.DiscoverBoatHouse)
 
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatStartTime)
-
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatEndTime)
+                @Html.DisplayNameFor(model => Model.booking.BoatTripPrice)
 
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].BoatTripDate)
+                @Html.DisplayNameFor(model => Model.booking.BoatStartTime)
 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].OtherActivities)
-
-            </th>
-
-            <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].Restaurant)
+                @Html.DisplayNameFor(model => Model.booking.BoatEndTime)
 
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].Beverages)
+                @Html.DisplayNameFor(model => Model.booking.BoatTripDate)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => Model.booking.OtherActivities)
 
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].NoOfPersons)
+                @Html.DisplayNameFor(model => Model.booking.Restaurant)
+
             </th>
 
             <th>
-                @Html.DisplayNameFor(model => model.båtHusetBokningSummary[0].TotalPrice)
+                @Html.DisplayNameFor(model => Model.booking.Beverages)
+
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => Model.booking.NoOfPersons)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => Model.booking.TotalPrice)
 
             </th>
 
@@ -118,76 +119,137 @@
 
 
     <tbody>
-        @foreach (var item in @Model.båtHusetBokningSummary)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BåtHusetBokningTransactionID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DiscoverBoatHouse)
-                </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoatTripPrice)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoatStartTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoatEndTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.BoatTripDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OtherActivities)
-                </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.BåtHusetBokningTransactionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.DiscoverBoatHouse)
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Restaurant)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Beverages)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NoOfPersons)
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.BoatTripPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.BoatStartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.BoatEndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.BoatTripDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.OtherActivities)
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.TotalPrice)
-                </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Status)
-                </td>*@
-                <td>
-                    <a asp-page="./BåtHusetbokningSummary" asp-route-id="@item.BåtHusetBokningTransactionID"></a>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.Restaurant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.Beverages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.NoOfPersons)
+            </td>
 
-                    @*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
-                    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.booking.TotalPrice)
+            </td>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+                @*<a asp-page="./BåtHusetbokningSummary" asp-route-id="Model.booking.BåtHusetBokningTransactionID"></a>*@
+                <a asp-page="./BåtHusetbokningSummary" asp-route-id="@Model.booking.BåtHusetBokningTransactionID"></a>
+
+            </td>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;
 
 
-            </tr>
-        }
+        </tr>
+
+
+        @*@foreach (var item in @Model.båtHusetBokningSummary)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BåtHusetBokningTransactionID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiscoverBoatHouse)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BoatTripPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BoatStartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BoatEndTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BoatTripDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OtherActivities)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Restaurant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Beverages)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NoOfPersons)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TotalPrice)
+                    </td>
+
+                    <td>
+                        <a asp-page="./BåtHusetbokningSummary" asp-route-id="@item.BåtHusetBokningTransactionID"></a>
+
+
+                    </td>
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                </tr>
+            }*@
 
 
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-       
-    <div class="button1">
-        <button style="height:80px;width:80px" position="center">Continue to Payment </button>
-    </div>
-      
+
+
 
     </tbody>
-</table>
+    <div class="button1">
+        @*<button name="Submit" style="margin-left: 100.25px"onclick="window.location.href='./payment/' + id;" >Continue to Payment</button>*@
+        <button type="button" onclick="SubmitPage()" style="height:80px;width:80px" bottom:-1;position ="center"  margin-left:60%; margin-right:60%;>Continue to Payment </button>
+        @*<button style="height:80px;width:80px" bottom:-1;position="fixed">Continue to Payment </button*@
+        @*<input class="button" type="button" onclick=" location.replace('./payment')" value="Continue to Payment" />*@
+        @*<a asp-page="./BåthusetResa/payment"></a>*@
+    </div>
 
+
+</table>
+<script>
+    function SubmitPage() {
+        window.open("/BåthusetResa/payment/?id=@Model.booking.BåtHusetBokningTransactionID");
+    }
+</script>
 
 @*<table class ="table "cellpadding="0" cellspacing="0" >
             <tr>

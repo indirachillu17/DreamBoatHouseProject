@@ -1,11 +1,10 @@
 ﻿@page
-@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.AndraaktiviteterModel
+@model FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa.AndraaktivitieterListModel
 @{
     ViewData["Title"] = "Andraaktiviteter";
 }
 
 <h1>Andraaktiviteter</h1>
-
 <style>
     body {
         /*background-color: #ADD8E6;*/
@@ -14,11 +13,13 @@
         /*background: #0094ff url("/css/DANCE1.gif") no-repeat fixed bottom;
         background-size: 190px;
         background-position: left;*/
-        background-image: url("/css/background2.jpg");
+       background-image: url("/css/background2.jpg");
         background-size: cover;
         background-attachment: fixed;
         /*background: #ADD8E6, rgb(30,144,255);*/
     }
+
+   
 </style>
 
 
@@ -54,10 +55,13 @@
                 </td>
 
                 <td>
-                    <a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID"></a>
+                    <a asp-page="./Andraaktiviteterdetaljer" asp-route-id="@item.AndraaktiviteterID">Detaljer</a> |
+                    <a asp-page="./EditAndraaktiviteter" asp-route-id="@item.AndraaktiviteterID">Edit</a> |
+                    <a asp-page="./AndraaktiviteterDelete" asp-route-id="@item.AndraaktiviteterID">Delete</a>
 
-                    @*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
-                    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
+                    <!--@*<a asp-page="./Andraaktiviteter detaljer" asp-route-id="@item.AndraaktiviteterID">Details</a> :*@
+    @*<a asp-page="./EditOtherActivities" asp-route-id="@item.AndraaktiviteterID">Edit</a>*@
+    -->
                 </td>
             </tr>
         }

@@ -32,9 +32,6 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.Property<string>("ActivityTime")
                         .HasColumnType("nvarchar(max)");
 
-                    //b.Property<string>("ActivityType")
-                    //    .HasColumnType("nvarchar(max)");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -128,6 +125,30 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                     b.HasKey("BåtHusetBokningTransactionID");
 
                     b.ToTable("BåtHusetBokningTransaction");
+                });
+
+            modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.FeedBack", b =>
+                {
+                    b.Property<int>("FeedbackId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AnyAdditionalComments")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BestExperience")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OverallExperience")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("FeedBack");
                 });
 
             modelBuilder.Entity("FrejyaBåtHuset_WebAPI_Backend.Models.User", b =>

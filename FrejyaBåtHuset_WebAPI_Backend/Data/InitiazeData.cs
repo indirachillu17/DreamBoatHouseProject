@@ -1,4 +1,6 @@
-﻿using FrejyaBåtHuset_WebAPI_Backend.Models;
+﻿
+
+using FrejyaBåtHuset_WebAPI_Backend.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 using System;
@@ -12,13 +14,14 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
     public class InitiazeData
     {
         static FrejyaBåtHuset_WebAPI_BackendContext  _context;
+      
         public static void SeedData(FrejyaBåtHuset_WebAPI_BackendContext dbContext)
         {
             _context = dbContext;
 
 
             //Deletes database completly.
-            _context.Database.EnsureDeleted();
+            //_context.Database.EnsureDeleted();
 
             //Apply all migrations automatically
             _context.Database.Migrate();
@@ -42,6 +45,12 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
             {
                 SeedBåtHusetBokningTransactionData();
             }
+
+            if (_context.FeedBack.Count() <= 0)
+            {
+                SeedFeedBack();
+            }
+
         }
         
 
@@ -91,6 +100,18 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Data
             //båtHusetBokningTransaction.Add(new BåtHusetBokningTransaction() { UserId =0, DiscoverBoatHouse=0 , BoatTripPrice = 350, BoatTripDate = Convert.ToDateTime("2020-12-23"), BoatStartTime = " 10:00:00", BoatEndTime = " 19:00:00", OtherActivities = "Barn-Activities", Restaurant = "Non-Vegeterian Food(200Kr)", NoOfPersons = 2, Beverages = "Water bottle", TotalPrice = 2230 });
             _context.BåtHusetBokningTransaction.AddRange(båtHusetBokningTransaction);
             _context.SaveChanges();
+
+
+
+
+        }
+        private static void SeedFeedBack()
+        {
+            List<FeedBack> feedBack = new List<FeedBack>();
+            _context.FeedBack.AddRange(feedBack);
+            _context.SaveChanges();
+            //båtHusetBokningTransaction.Add(new BåtHusetBokningTransaction() { UserId =0, DiscoverBoatHouse=0 , BoatTripPrice = 350, BoatTripDate = Convert.ToDateTime("2020-12-23"), BoatStartTime = " 10:00:00", BoatEndTime = " 19:00:00", OtherActivities = "Barn-Activities", Restaurant = "Non-Vegeterian Food(200Kr)", NoOfPersons = 2, Beverages = "Water bottle", TotalPrice = 2230 });
+
 
 
 

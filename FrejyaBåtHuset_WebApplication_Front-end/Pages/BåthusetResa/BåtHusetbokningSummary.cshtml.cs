@@ -16,14 +16,56 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
         [BindProperty]
 
         public IList<BåtHusetBokningTransaction> båtHusetBokningSummary { get; set; }
-        public async Task OnGet()
+        //[BindProperty]
+        //public List<int> Submit { get; set; }
+
+
+        [BindProperty]
+        public BåtHusetBokningTransaction booking { get; set; }
+        public async Task OnGet(int? id)
         {
+            //Submit = new List<int>();
+            
             båtHusetBokningSummary = new List<BåtHusetBokningTransaction>();
+            booking = new BåtHusetBokningTransaction();
+            //båtHusetBokningSummary = await apiHelper.GetCallApiAsync<IList<BåtHusetBokningTransaction>>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction/"+id);
+            booking = await apiHelper.GetCallApiAsync<BåtHusetBokningTransaction>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction/" + id);
+            //RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID });
 
-            båtHusetBokningSummary = await apiHelper.GetCallApiAsync<IList<BåtHusetBokningTransaction>>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction");
         }
+        
+        //public  object SubmitPage()
+        //{
+        //   //return RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID });
+        //    return RedirectToPage("./payment", new { id = booking.BåtHusetBokningTransactionID });
+        //}
 
+        //public async Task<IActionResult> OnGetAsync(int id)
+        //{
+        ////    if (booking.BåtHusetBokningTransactionID == 0)
+        ////    {
+        ////        booking = await apiHelper.GetCallApiAsync<BåtHusetBokningTransaction>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction/" + id);
+        ////        return RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID });
+        ////    }
+        ////    else
+        ////    {
+        ////        return RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID });
+        ////    }
+        ////}
+        ////RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID});
+        //}
+        //public async Task<IActionResult> OnPostAsync()
+        //{
 
+        //    //booking = await apiHelper.PostCallApiAsync<BåtHusetBokningTransaction>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction", booking);
+
+        //    //return RedirectToPage("/BåthusetResa/payment", new { id = booking.BåtHusetBokningTransactionID });
+        //    //    if (!ModelState.IsValid)
+        //    //    {
+        //    //        booking = new BåtHusetBokningTransaction();
+        //    //        booking= await apiHelper.GetCallApiAsync<BåtHusetBokningTransaction>(GlobalValue.ApiPath + "/BåtHusetBokningTransaction/"+booking.BåtHusetBokningTransactionID);
+        //    //        return RedirectToPage("/BåthusetResa/payment", booking);
+        //    //}
 
     }
 }

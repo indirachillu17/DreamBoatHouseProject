@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using FrejyaBåtHuset_WebAPI_Backend.Models;
-using FrejyaBåtHuset_WebApplication_Front_end.HelperClasses;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using FrejyaBåtHuset_WebApplication_Front_end.HelperClasses;
+using FrejyaBåtHuset_WebAPI_Backend.Models;
+
 
 namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
-{
-    public class AndraaktiviteterModel : PageModel
+{ 
+    public class AndraaktivitieterListModel : PageModel
     {
         private ApiHelper apiHelper = new ApiHelper();
 
@@ -18,11 +19,19 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
         [BindProperty]
         public IList<Andraaktiviteter> listofactivitities { get; set; }
 
+
+
         public async Task OnGet()
         {
             listofactivitities = new List<Andraaktiviteter>();
 
-            listofactivitities = await apiHelper.GetCallApiAsync<IList<Andraaktiviteter>>(GlobalValue.ApiPath + "/Andraaktiviteter");
+        listofactivitities = await apiHelper.GetCallApiAsync<IList<Andraaktiviteter>>(GlobalValue.ApiPath + "/Andraaktiviteter");
+
+
+            
         }
-    }
+
+
+        
+        }
 }

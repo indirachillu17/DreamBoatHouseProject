@@ -85,6 +85,23 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "FeedBack",
+                columns: table => new
+                {
+                    FeedbackId = table.Column<int>(nullable: false),
+                    UserId = table.Column<int>(nullable: false),
+                    OverallExperience = table.Column<string>(nullable: true),
+                    BestExperience = table.Column<string>(nullable: true),
+                    AnyAdditionalComments = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FeedBack", x => x.UserId);
+                });
+
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -102,6 +119,11 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
+
+            migrationBuilder.DropTable(
+                name: "FeedBack");
+
+
         }
     }
 }
