@@ -35,11 +35,37 @@
                 background-attachment: fixed;
                 background-position-y:20px;*/
             }
+            #cf {
+                position: relative;
+                height: 281px;
+                width: 450px;
+                margin: 0 auto;
+
+            }
+
+                #cf img {
+                    position: absolute;
+                    /*left: 0;*/
+                    -webkit-transition: opacity 1s ease-in-out;
+                    -moz-transition: opacity 1s ease-in-out;
+                    -o-transition: opacity 1s ease-in-out;
+                    transition: opacity 1s ease-in-out;
+                    top: 0px;
+                    right:-400px;
+                }
+
+                    #cf img.top:hover {
+                        opacity: 0;
+                    }
+ 
             /*.blocktext {
                 width: 8em
             }*/
         </style>
-        
+        <div id="cf">
+        <img  class="bottom" src="/css/princess1.jpg" width="150" height="150" align="left" />
+        <img class="top" src="/css/princess2.jpg" width="150" height="150" align="left" />
+        </div>
             @*<p class="blocktext"> 
             Vi erbjuder en dagsutflykt i båt med avgång från Stenpiren till Danmark. Båten brukar måndag -lördag klockan 10:00-19:00.Upptäck denna trevliga båtupplevelse som dessutom erbjuder speciella attraktioner och olika aktiviteter som tillval. 
             Du kan välja mellan:

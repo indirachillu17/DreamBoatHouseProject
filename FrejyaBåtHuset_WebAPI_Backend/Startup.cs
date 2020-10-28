@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using FrejyaBåtHuset_WebAPI_Backend.Data;
+using Swashbuckle;
 
 namespace FrejyaBåtHuset_WebAPI_Backend
 {
@@ -27,18 +28,24 @@ namespace FrejyaBåtHuset_WebAPI_Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
 
+            services.AddControllers();
             services.AddOpenApiDocument();
             services.AddDbContext<FrejyaBåtHuset_WebAPI_BackendContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("FrejyaBåtHuset_WebAPI_BackendContext")));
-            //created service then used its object & called function.
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Values Api", Version = "v1" });
+            });
+            services.AddSwaggerDocument();
         }
+        //created service then used its object & called function.
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -50,7 +57,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend
                 var context = serviceScope.ServiceProvider.GetRequiredService<FrejyaBåtHuset_WebAPI_BackendContext>();
                 InitiazeData.SeedData(context);
             }
-            
+
 
             app.UseHttpsRedirection();
 
@@ -62,9 +69,27 @@ namespace FrejyaBåtHuset_WebAPI_Backend
             {
                 endpoints.MapControllers();
             });
-
-            app.UseOpenApi();
+            
             app.UseSwaggerUi3();
+            app.UseSwagger(c => { c.RouteTemplate = "/swagger/{documentName}/swagger.json"; });
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "TestService");
+                
+            });
+
+            //app.UseStaticFiles();
+            //app.UseOpenApi();
+            //app.UseSwaggerUI();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            //});
+            //app.UseOpenApi();
+            //app.UseSwaggerUi3();
+
+
         }
     }
 }
+
