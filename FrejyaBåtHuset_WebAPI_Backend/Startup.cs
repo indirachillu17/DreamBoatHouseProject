@@ -28,8 +28,8 @@ namespace FrejyaBåtHuset_WebAPI_Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddOpenApiDocument();
 
+            services.AddOpenApiDocument();
             services.AddDbContext<FrejyaBåtHuset_WebAPI_BackendContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("FrejyaBåtHuset_WebAPI_BackendContext")));
             //created service then used its object & called function.
@@ -38,6 +38,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
