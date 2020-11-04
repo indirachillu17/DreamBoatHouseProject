@@ -6,7 +6,7 @@
 
 }
 
-<h1 font-size: 150px;  font-weight:"bold">BåtHusetBokning</h1>
+<h1 font-size: 200px;  font-weight:"bold">BåtHusetBokning</h1>
     <br />
 
     <style>
@@ -69,13 +69,12 @@
             <input style="margin-left: 100px" ; asp-for="@Model.båtHusetBokning[0].BoatEndTime" readonly /><br />
             <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
 
-            <label asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
-            <input style="margin-left: 100px" ; height:500px; type="date" asp-for="@Model.båtHusetBokning[0].BoatTripDate" /><br />
+            <label  asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
+            <input style="margin-left: 100px" ; height:500px; type="date"  asp-for="@Model.båtHusetBokning[0].BoatTripDate" /><br />
             <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripDate"></span><br />
         </div>
 
         <div>
-
             <Legend><b> Other Activities</b></Legend>
 
             @foreach (var item in @Model.båtHusetBokning)

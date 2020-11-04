@@ -19,19 +19,24 @@
         background-attachment: fixed;
         /*background: #ADD8E6, rgb(30,144,255);*/
     }
+    /*.table {
+        border-collapse: collapse;
+        column-gap:-50px;
+        
+    }*/
 </style>
 
 
 <table class="table">
     <thead>
         <tr>
-            <th  style="text-align:center" >
+            <th > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 @Html.DisplayNameFor(model => model.listofactivitities[0].ActivityName)
             </th>
-            <th style="text-align:center">
+            <th style1="margin-left:200px" ;  > 
                 @Html.DisplayNameFor(model => model.listofactivitities[0].ActivityTime)
             </th>
-            <th style="text-align:center">
+            <th style1="margin-left:30px" ;> 
                 @Html.DisplayNameFor(model => model.listofactivitities[0].Price)
             </th>
 
@@ -43,13 +48,13 @@
         @foreach (var item in @Model.listofactivitities)
         {
             <tr>
-                <td style="text-align:center">
+                <td > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     @Html.DisplayFor(modelItem => item.ActivityName)
                 </td>
-                <td style="text-align:center">
+                <td width="300px">
                     @Html.DisplayFor(modelItem => item.ActivityTime)
                 </td>
-                <td style="text-align:center">
+                <td width="200px">
                     @Html.DisplayFor(modelItem => item.Price)
                 </td>
 

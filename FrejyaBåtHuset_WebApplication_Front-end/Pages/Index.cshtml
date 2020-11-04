@@ -40,7 +40,7 @@
                 height: 281px;
                 width: 450px;
                 margin: 0 auto;
-
+                animation-delay: 4s
             }
 
                 #cf img {
@@ -51,18 +51,31 @@
                     -o-transition: opacity 1s ease-in-out;
                     transition: opacity 1s ease-in-out;
                     top: 0px;
-                    right:-400px;
+                    right: -400px;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-animation: stripes 2s linear infinite;
+                    animation: stripes 2s linear infinite;
+                   
                 }
+
+            .slideshow-container {
+                position: relative;
+                margin: auto;
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
 
                     #cf img.top:hover {
                         opacity: 0;
                     }
- 
+
             /*.blocktext {
                 width: 8em
             }*/
         </style>
-        <div id="cf">
+        <div id="cf" class="slideshow-container">
         <img  class="bottom" src="/css/princess1.jpg" width="150" height="150" align="left" />
         <img class="top" src="/css/princess2.jpg" width="150" height="150" align="left" />
         </div>
