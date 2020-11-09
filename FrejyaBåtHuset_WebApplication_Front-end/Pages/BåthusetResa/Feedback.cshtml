@@ -4,7 +4,7 @@
     ViewData["Title"] = "Feedback";
 }
 
-<h1>Feedback</h1>
+<h1 class="visible-lg">Feedback</h1>
 <br>
 
 <style>
@@ -25,57 +25,87 @@
 </style>
 <form method="post">
     <div class="outline">
-        <div class="container">
+        <div class="card-body">
 
             <div class="row">
-                <label style="color: darkblue">1.How was your overall experience at the boathousetrip?</label><br>
+                &nbsp;&nbsp;
+                <label for="1.How was your overall experience at the boathousetrip? "> 1.How was your overall experience at the boathousetrip?</label>
+                @*<label style="color: darkblue">1.How was your overall experience at the boathousetrip?</label><br>*@
 
             </div>
             <div class="row">
-                <label class="radio-line"> <input type="radio" name="experience" value="Better"> Better</label>
+                &nbsp;&nbsp;
+                <label class="radio-line">
+                    <input type="radio" name="experience" value="Better"> Better
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <label class="radio-line">
+                    <input type="radio" name="experience" value="Best"> Best
+                </label>&nbsp;&nbsp;
+                <label class="radio-line">
+                    <input type="radio" name="experience" value="Ok"> Ok
+                </label>
+
+                @*<label class="radio-line"> <input type="radio" name="experience" value="Better"> Better</label>
                 <label class="radio-line"> <input type="radio" name="experience" value="Best"> Best</label>
-                <label class="radio-line"> <input type="radio" name="experience" value="Ok"> Ok</label>
+                <label class="radio-line"> <input type="radio" name="experience" value="Ok"> Ok</label>*@
 
             </div>
         </div>
         <br>
-        <br>
-        
-        <div class="container1">
-            <div class="row"> &nbsp;&nbsp;&nbsp;&nbsp;
-                <label style="color: darkblue">2.What was your best experience at the båthusettrip??</label>
-                <br />
 
+
+        <div class="container1">
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="2.What was your best experience at the båthusettrip?? "> 2.What was your best experience at the båthusettrip?</label>
+                @*<label style="color: darkblue">2.What was your best experience at the båthusettrip??</label>*@
+                <br />
             </div>
-            <div class="row"> &nbsp;&nbsp;&nbsp;&nbsp;
-                <label class="radio-line"> <input type="radio" name="experience1" value="BoatTrip"> BoatTrip</label>
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                <label class="radio-line">
+                    <input type="radio"  name="experience1" value="BoatTrip">BoatTrip
+                </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                <label class="checkbox inline">
+                    <input type="radio" name="experience1" value="OtherActivities"> OtherActivities
+                </label>&nbsp;&nbsp;
+                <label class="checkbox inline">
+                    <input type="radio" name="experience1" value="Food"> Food
+                </label>
+                @*<label class="radio-line"> <input type="radio" name="experience1" value="BoatTrip"> BoatTrip</label>
                 <label class="radio-line"> <input type="radio" name="experience1" value="OtherActivities"> OtherActivities</label>
-                <label class="radio-line"> <input type="radio" name="experience1" value="Food"> Food</label>
+                <label class="radio-line"> <input type="radio" name="experience1" value="Food"> Food</label>*@
 
             </div>
         </div>
         <br>
         <br>
         <div class="container2">
-            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
-                <label style="color: darkblue"> 3.Any Suggestions/Comments??</label>
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="3.Any Suggestions/Comments?"> 3.Any Suggestions/Comments?</label>
+                @*<label style="color: darkblue"> 3.Any Suggestions/Comments??</label>*@
                 <br />
             </div>
 
-            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;
-                <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" class="text-body" id="comments" name="comments">
+                @*<textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1.2em;">
 
-    </textarea>
+                </textarea>*@
 
             </div>
         </div>
         <br>
         <br>
         <div class="container3">
-            <div class="row"> &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="submit" value="Submit" onclick="confirm('The Feedback is updated successfully.Do you want to go back to homepage')">
+            <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" class="btn-outline-info" value="Submit" onclick="confirm('The Feedback is updated successfully.Do you want to go back to homepage')">
             </div>
         </div>
     </div>
-       
+    <br>
+    <br>
 </form>

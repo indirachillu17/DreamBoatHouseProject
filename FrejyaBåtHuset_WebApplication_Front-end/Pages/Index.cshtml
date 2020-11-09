@@ -7,80 +7,124 @@
 }
 
 
-    <div >
+<div>
 
-        <h1 class="display-4" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Välkommen    till   drömma båthuset  </h1>
+    <h1 class="display-4" style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Välkommen    till   drömma båthuset  </h1>
 
-        <style>
-            .display-4 {
-                position: fixed;
-                top: 45px;
-                position: absolute;
-                font-size: 55px;
-                /*font-weight: bold;*/
-                font-family:Times New Roman;
-            }
-            body {
-                background-image: url("/css/boat8.jpg");
-                background-size: cover;
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-position-x: 1px;
-                background-position-y: 20px;
-                /*background-image: url("/css/boat8.jpg");
+    <style>
+        .display-4 {
+            position: fixed;
+            top: 45px;
+            position: absolute;
+            font-size: 55px;
+            /*font-weight: bold;*/
+            font-family: Times New Roman;
+        }
+
+        body {
+            background-image: url("/css/boat8.jpg");
+            background-size: cover;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position-x: 1px;
+            background-position-y: 20px;
+            /*background-image: url("/css/boat8.jpg");
                 background-size: cover;
                 background-size:100% 90%;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-position-y:20px;*/
-            }
-            #cf {
-                position: relative;
-                height: 281px;
-                width: 450px;
-                margin: 0 auto;
-                animation-delay: 4s
-            }
+        }
 
-                #cf img {
-                    position: absolute;
-                    /*left: 0;*/
-                    -webkit-transition: opacity 1s ease-in-out;
-                    -moz-transition: opacity 1s ease-in-out;
-                    -o-transition: opacity 1s ease-in-out;
-                    transition: opacity 1s ease-in-out;
-                    top: 0px;
-                    right: -400px;
-                    -webkit-text-fill-color: transparent;
-                    -webkit-animation: stripes 2s linear infinite;
-                    animation: stripes 2s linear infinite;
-                   
-                }
+        #cf {
+            position: relative;
+            height: 281px;
+            width: 450px;
+            margin: 0 auto;
+            animation-delay: 4s;
+            animation-duration: 4s;
+        }
 
-            .slideshow-container {
-                position: relative;
-                margin: auto;
-                -webkit-animation-name: fade;
-                -webkit-animation-duration: 1.5s;
-                animation-name: fade;
-                animation-duration: 1.5s;
+            #cf img {
+                position: absolute;
+                /*left: 0;*/
+                -webkit-transition: opacity 1s ease-in-out;
+                -moz-transition: opacity 1s ease-in-out;
+                -o-transition: opacity 1s ease-in-out;
+                transition: opacity 1s ease-in-out;
+                top: 0px;
+                right: -400px;
+                -webkit-text-fill-color: transparent;
+                -webkit-animation: stripes 2s linear infinite;
+                animation: stripes 2s linear infinite;
             }
 
-                    #cf img.top:hover {
-                        opacity: 0;
-                    }
+        .slideshow-container {
+            position: relative;
+            margin: auto;
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
 
-            /*.blocktext {
+        #cf img.top:hover {
+            opacity: 0;
+        }
+
+        /*.blocktext {
                 width: 8em
             }*/
-        </style>
-        <div id="cf" class="slideshow-container">
-        <img  class="bottom" src="/css/princess1.jpg" width="150" height="150" align="left" />
-        <img class="top" src="/css/princess2.jpg" width="150" height="150" align="left" />
-        </div>
-            @*<p class="blocktext"> 
-            Vi erbjuder en dagsutflykt i båt med avgång från Stenpiren till Danmark. Båten brukar måndag -lördag klockan 10:00-19:00.Upptäck denna trevliga båtupplevelse som dessutom erbjuder speciella attraktioner och olika aktiviteter som tillval. 
+
+
+
+    </style>
+    @*<div id="cf" class="slideshow-container">
+            <img class="bottom" src="/css/princess1.jpg" width="150" height="150" align="left" />
+            <img class="top" src="/css/princess2.jpg" width="150" height="150" align="left" />
+        </div>*@
+
+    @*<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-inline-block" width="150" height="150" src="/css/princess2.jpg" alt="First slide" align="right">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-inline-block" width="150" height="150" src="/css/princess1.jpg" alt="Second slide" align="right">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-inline-block" width="150" height="150" src="/css/princess2.jpg" alt="Third slide" align="right">
+                </div>
+            </div>
+        </div>*@
+    <div class="w3-content w3-section" >
+
+        <img class="mySlides w3-animate-fading" src="/css/princess1.jpg" width="150"  height="150" align="right">
+        <img class="mySlides w3-animate-fading" src="/css/princess2.jpg" width="150"  height="150" align="right">
+        <img class="mySlides w3-animate-fading" src="/css/princess1.jpg" width="150"  height="150" align="right">
+        <img class="mySlides w3-animate-fading" src="/css/princess2.jpg" width="150"  height="150" align="right">
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 2000);
+        }
+    </script>
+
+    @*<p class="blocktext">
+            Vi erbjuder en dagsutflykt i båt med avgång från Stenpiren till Danmark. Båten brukar måndag -lördag klockan 10:00-19:00.Upptäck denna trevliga båtupplevelse som dessutom erbjuder speciella attraktioner och olika aktiviteter som tillval.
             Du kan välja mellan:
             Barnaktiviteter
             Konsert
@@ -92,7 +136,7 @@
             Om du inte vill boka en aktivitet finns det ett konstgalleri samt en restaurang där vår egen kock lagar fantastisk mat åt dig.
             Man kan köpa vatten, läsk, te/kaffe, öl/vin ombord på båten.
         </p>*@
-    </div>
+</div>
 
 @*<div class="card-columns">
 

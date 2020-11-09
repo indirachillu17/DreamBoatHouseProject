@@ -6,35 +6,33 @@
 
 }
 
-<h1 font-size: 200px;  font-weight:"bold">BåtHusetBokning</h1>
-    <br />
 
-    <style>
+<style>
 
-            body {
-                /*background-image: url("/css/Logo.png");
+    body {
+        /*background-image: url("/css/Logo.png");
             background-size: 20% 20%;*/
-               /* background-repeat: no-repeat;
+        /* background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-position: right top;*/
-                background-color: #87CEFA;
-            }
+        background-color: #87CEFA;
+    }
 
-            img {
-                border-radius: 60%;
-                top: 60px;
-                right: 40px;
-                position:absolute;
-            }
+    img {
+        border-radius: 60%;
+        top: 60px;
+        right: 40px;
+        position: absolute;
+    }
 
-            .Inputdata {
-            }
+    .Inputdata {
+    }
 
-                .Inputdata input {
-                    margin-left: 6em;
-                }
+        .Inputdata input {
+            margin-left: 6em;
+        }
 
-            /*.left {
+    /*.left {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -42,12 +40,109 @@
 
         }*/
 
-    </style>
-    <img class="img" src="/css/Logo.png" width="150" height="150" align="right" />
+</style>
 
-    <form method="post">
+<img class="img" src="/css/Logo.png" width="150" height="150" align="right" />
+<div class="container">
+     <h1 class="visible-lg" style:width="30px";style="margin-left: -5px" >BåtHusetBokning</h1>
+</div>
+<br>
+<form method="post">
+    <div class="row">
+        <input type="hidden" class="sr-only" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
+        <div class="form-inline">
+            <label class="col" asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></label>
+            <input type="text" class="form-control" asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse" readonly>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="form-inline">
+            <label class="col" asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
+            <input type="text" class="form-control" asp-for="@Model.båtHusetBokning[0].BoatTripPrice" readonly>
+        </div>
 
-        <div class="Inputdata">
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-inline">
+            <label class="col" asp-for="@Model.båtHusetBokning[0].BoatStartTime"></label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" class="form-control" asp-for="@Model.båtHusetBokning[0].BoatStartTime" readonly>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="form-inline">
+            <label class="col" asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
+            <input type="text" class="form-control" asp-for="@Model.båtHusetBokning[0].BoatEndTime" readonly>
+        </div>
+    </div>
+    <br>
+    <div class="form-inline">
+        <div class="row">
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <label asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="date" class="form-control" style:width="35px" asp-for="@Model.båtHusetBokning[0].BoatTripDate">
+        </div>
+    </div>
+    <br>
+    &nbsp;&nbsp;
+    <b>
+        <h3 class="visible"> Other Activities</h3>
+    </b>
+    <div class="col">
+
+        @foreach (var item in @Model.båtHusetBokning)
+        {
+            <input name="areChecked" style="margin-bottom: 20px;" style1="margin-left: 100.25px" ; padding-left: 20px; type="checkbox" value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />
+            <label class="custom-checkbox"> @item.OtherActivities  @item.ActivitiesTiming  @item.PriceOfTicket </label> <br>
+
+        }
+    </div>
+    &nbsp;
+    <div class="col">
+        <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
+        <select name="lstRestaurant" style="margin-left: 110px" ; id="listbox" multiple="multiple">
+            @foreach (var item in Model.båtHusetBokning)
+            {
+                <option value="@item.Restaurant">
+                    @item.Restaurant
+                </option>
+
+            }
+        </select>
+    </div>
+    <br>
+    <b>
+        <text>*Complimentary drinks no charges</text>
+    </b>
+    <br>
+    <br>
+    <label asp-for="@Model.båtHusetBokning[0].Beverages"></label>
+    <select name="lstBeverages" style="margin-left:120px" ; id="listbox" multiple="multiple">
+        @foreach (var item in Model.båtHusetBokning)
+        {
+            <option value="@item.Beverages">
+                @item.Beverages
+            </option>
+
+        }
+    </select>
+    <br>
+    <br>
+    <b>
+        <text>*Max limit 50 people</text>
+    </b>
+    <br>
+    <br>
+    <label asp-for="@Model.NoOfPersons"></label>
+    <input style="margin-left: 90.55px" ; asp-for="@Model.NoOfPersons" type="number" min="1" max="50" /><br />
+    <span asp-validation-for="@Model.NoOfPersons"></span><br>
+    <br>
+    <div>
+        <button class="btn-outline-success" style="margin-left: 100.25px">Submit</button>
+
+        <input class="btn-outline-danger" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
+    </div>
+    @*<div class="Inputdata">
             <div asp-validation-summary="All"></div>
 
             <input type="hidden" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
@@ -81,7 +176,7 @@
             {
                 <input name="areChecked" style="margin-bottom: 20px;" style1="margin-left: 100.25px" ; padding-left: 20px; type="checkbox" value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />
                 <label> @item.OtherActivities  @item.ActivitiesTiming  @item.PriceOfTicket </label><br>
-                @*<input name="areChecked" style="margin-bottom: 20px;" padding-left: 20px;  type="checkbox"  value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />@item.OtherActivities   @item.ActivitiesTiming  @item.PriceOfTicket<br>*@
+                <input name="areChecked" style="margin-bottom: 20px;" padding-left: 20px;  type="checkbox"  value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />@item.OtherActivities   @item.ActivitiesTiming  @item.PriceOfTicket<br>
 
             }
             <br />
@@ -136,5 +231,5 @@
 
                 <input class="button" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
             </div>
-        </div>
-    </form>
+        </div>*@
+</form>
