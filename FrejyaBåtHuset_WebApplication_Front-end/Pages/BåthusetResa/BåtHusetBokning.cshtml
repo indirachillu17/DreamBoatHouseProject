@@ -68,7 +68,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="text" class="form-control" asp-for="@Model.båtHusetBokning[0].BoatStartTime" readonly>
         </div>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <div class="form-inline">
             <label class="col" asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
             <input type="text" class="form-control" asp-for="@Model.båtHusetBokning[0].BoatEndTime" readonly>
@@ -79,7 +79,7 @@
         <div class="row">
             &nbsp;&nbsp;&nbsp;&nbsp;
             <label asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="date" class="form-control" style:width="35px" asp-for="@Model.båtHusetBokning[0].BoatTripDate">
         </div>
     </div>
@@ -97,7 +97,6 @@
 
         }
     </div>
-    &nbsp;
     <div class="col">
         <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
         <select name="lstRestaurant" style="margin-left: 110px" ; id="listbox" multiple="multiple">
@@ -137,7 +136,7 @@
     <input style="margin-left: 90.55px" ; asp-for="@Model.NoOfPersons" type="number" min="1" max="50" /><br />
     <span asp-validation-for="@Model.NoOfPersons"></span><br>
     <br>
-    <div>
+    <div >
         <button class="btn-outline-success" style="margin-left: 100.25px">Submit</button>
 
         <input class="btn-outline-danger" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
