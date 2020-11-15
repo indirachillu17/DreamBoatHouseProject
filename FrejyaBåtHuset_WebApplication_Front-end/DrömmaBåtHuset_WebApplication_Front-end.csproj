@@ -6,10 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\css\Boat.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FrejyaBåtHuset_WebAPI_Backend\DrömmaBåtHuset_WebAPI_Backend.csproj" />
   </ItemGroup>
 

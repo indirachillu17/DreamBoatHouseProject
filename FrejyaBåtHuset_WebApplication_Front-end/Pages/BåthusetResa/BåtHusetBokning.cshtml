@@ -97,6 +97,7 @@
 
         }
     </div>
+    &nbsp;&nbsp;
     <div class="col">
         <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
         <select name="lstRestaurant" style="margin-left: 110px" ; id="listbox" multiple="multiple">
@@ -136,7 +137,7 @@
     <input style="margin-left: 90.55px" ; asp-for="@Model.NoOfPersons" type="number" min="1" max="50" /><br />
     <span asp-validation-for="@Model.NoOfPersons"></span><br>
     <br>
-    <div >
+    <div>
         <button class="btn-outline-success" style="margin-left: 100.25px">Submit</button>
 
         <input class="btn-outline-danger" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
