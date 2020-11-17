@@ -15,13 +15,13 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Controllers
     public class BåtHusetBokningController : ControllerBase
     {
         private readonly FrejyaBåtHuset_WebAPI_BackendContext _context;
-
+       
         public BåtHusetBokningController(FrejyaBåtHuset_WebAPI_BackendContext context)
         {
             _context = context;
         }
-
-        // GET: api/BåtHusetBokning
+        
+        //GET: api/BåtHusetBokning
         [HttpGet]
         public async Task<ActionResult<IEnumerable<BåtHusetBokning>>> GetBåtHusetBokning()
         {
