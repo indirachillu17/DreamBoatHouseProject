@@ -38,7 +38,7 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
             feedBack.BestExperience = experience1;
             feedBack.AnyAdditionalComments = comments.Trim();
 
-          var feedBackDetails = await apiHelper.PostCallApiAsync<FeedBack>(GlobalValue.ApiPath + "/FeedBacks",feedBack);
+          var feedBackDetails = await apiHelper.PostCallApiAsync<FeedBack>(GlobalValue.ApiPath + "/FeedBack",feedBack);
             //message = "The feeback is updated successfully.Do you want to goback to homepage";
             return RedirectToPage("/Index");
             //return RedirectToPage("./BåtHusetbokningSummary", feedBackDetails);
