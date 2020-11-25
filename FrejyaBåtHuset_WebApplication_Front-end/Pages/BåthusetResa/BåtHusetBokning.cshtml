@@ -89,6 +89,7 @@
         <b>
             <h3 class="visible"> Other Activities</h3>
         </b>
+        <br>
         <div class="col">
 
             @foreach (var item in @Model.båtHusetBokning)
@@ -145,95 +146,95 @@
         </div>
 
         @*<div class="Inputdata">
-                <div asp-validation-summary="All"></div>
+            <div asp-validation-summary="All"></div>
 
-                <input type="hidden" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
+            <input type="hidden" asp-for="@Model.båtHusetBokning[0].BåtHusetBokningID" />
 
-                <label asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></label>
-                <input style="margin-left: 50px" ; asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse" readonly /><br />
-                <span asp-validation-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></span><br />
+            <label asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></label>
+            <input style="margin-left: 50px" ; asp-for="@Model.båtHusetBokning[0].DiscoverBoatHouse" readonly /><br />
+            <span asp-validation-for="@Model.båtHusetBokning[0].DiscoverBoatHouse"></span><br />
 
-                <label asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
-                <input asp-for="@Model.båtHusetBokning[0].BoatTripPrice" readonly /><br />
-                <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripPrice"></span><br />
+            <label asp-for="@Model.båtHusetBokning[0].BoatTripPrice"></label>
+            <input asp-for="@Model.båtHusetBokning[0].BoatTripPrice" readonly /><br />
+            <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripPrice"></span><br />
 
-                <label asp-for="@Model.båtHusetBokning[0].BoatStartTime"></label>
-                <input style="margin-left: 90px" ; asp-for="@Model.båtHusetBokning[0].BoatStartTime" readonly /><br />
-                <span asp-validation-for="@Model.båtHusetBokning[0].BoatStartTime"></span><br />
+            <label asp-for="@Model.båtHusetBokning[0].BoatStartTime"></label>
+            <input style="margin-left: 90px" ; asp-for="@Model.båtHusetBokning[0].BoatStartTime" readonly /><br />
+            <span asp-validation-for="@Model.båtHusetBokning[0].BoatStartTime"></span><br />
 
 
-                <label asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
-                <input style="margin-left: 100px" ; asp-for="@Model.båtHusetBokning[0].BoatEndTime" readonly /><br />
-                <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
+            <label asp-for="@Model.båtHusetBokning[0].BoatEndTime"></label>
+            <input style="margin-left: 100px" ; asp-for="@Model.båtHusetBokning[0].BoatEndTime" readonly /><br />
+            <span asp-validation-for="@Model.båtHusetBokning[0].BoatEndTime"></span><br />
 
-                <label  asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
-                <input style="margin-left: 100px" ; height:500px; type="date"  asp-for="@Model.båtHusetBokning[0].BoatTripDate" /><br />
-                <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripDate"></span><br />
-            </div>
+            <label  asp-for="@Model.båtHusetBokning[0].BoatTripDate"></label>
+            <input style="margin-left: 100px" ; height:500px; type="date"  asp-for="@Model.båtHusetBokning[0].BoatTripDate" /><br />
+            <span asp-validation-for="@Model.båtHusetBokning[0].BoatTripDate"></span><br />
+        </div>
 
-            <div>
-                <Legend><b> Other Activities</b></Legend>
+        <div>
+            <Legend><b> Other Activities</b></Legend>
 
-                @foreach (var item in @Model.båtHusetBokning)
+            @foreach (var item in @Model.båtHusetBokning)
+            {
+                <input name="areChecked" style="margin-bottom: 20px;" style1="margin-left: 100.25px" ; padding-left: 20px; type="checkbox" value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />
+                <label> @item.OtherActivities  @item.ActivitiesTiming  @item.PriceOfTicket </label><br>
+                <input name="areChecked" style="margin-bottom: 20px;" padding-left: 20px;  type="checkbox"  value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />@item.OtherActivities   @item.ActivitiesTiming  @item.PriceOfTicket<br>
+
+            }
+            <br />
+            <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
+            <select name="lstRestaurant" style="margin-left: 110px" ; id="listbox" multiple="multiple">
+                @foreach (var item in Model.båtHusetBokning)
                 {
-                    <input name="areChecked" style="margin-bottom: 20px;" style1="margin-left: 100.25px" ; padding-left: 20px; type="checkbox" value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />
-                    <label> @item.OtherActivities  @item.ActivitiesTiming  @item.PriceOfTicket </label><br>
-                    <input name="areChecked" style="margin-bottom: 20px;" padding-left: 20px;  type="checkbox"  value="@item.OtherActivities  @item.ActivitiesTiming   @item.PriceOfTicket" />@item.OtherActivities   @item.ActivitiesTiming  @item.PriceOfTicket<br>
+                    <option value="@item.Restaurant">
+                        @item.Restaurant
+                    </option>
 
                 }
-                <br />
-                <label asp-for="@Model.båtHusetBokning[0].Restaurant"></label>
-                <select name="lstRestaurant" style="margin-left: 110px" ; id="listbox" multiple="multiple">
-                    @foreach (var item in Model.båtHusetBokning)
-                    {
-                        <option value="@item.Restaurant">
-                            @item.Restaurant
-                        </option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
 
-                    }
-                </select>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <b>
+                <label style="margin-left:-5px" ;>*Complimentary drinks no charges</label>
+            </b>
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <label asp-for="@Model.båtHusetBokning[0].Beverages"></label>
+            <select name="lstBeverages" style="margin-left:120px" ; id="listbox" multiple="multiple">
+                @foreach (var item in Model.båtHusetBokning)
+                {
+                    <option value="@item.Beverages">
+                        @item.Beverages
+                    </option>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-                <b>
-                    <label style="margin-left:-5px" ;>*Complimentary drinks no charges</label>
-                </b>
-                <br />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-                <label asp-for="@Model.båtHusetBokning[0].Beverages"></label>
-                <select name="lstBeverages" style="margin-left:120px" ; id="listbox" multiple="multiple">
-                    @foreach (var item in Model.båtHusetBokning)
-                    {
-                        <option value="@item.Beverages">
-                            @item.Beverages
-                        </option>
-
-                    }
-                </select>
+                }
+            </select>
 
 
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-                <br />
-                <b>
-                    <text style="margin-left: -5px" ;>*Max limit 50 people</text>
-                </b>
-                <br />
-                <br />
-                <label asp-for="@Model.NoOfPersons"></label>
-                <input style="margin-left: 90.55px" ; asp-for="@Model.NoOfPersons" type="number" min="1" max="50" /><br />
-                <span asp-validation-for="@Model.NoOfPersons"></span><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            <br />
+            <b>
+                <text style="margin-left: -5px" ;>*Max limit 50 people</text>
+            </b>
+            <br />
+            <br />
+            <label asp-for="@Model.NoOfPersons"></label>
+            <input style="margin-left: 90.55px" ; asp-for="@Model.NoOfPersons" type="number" min="1" max="50" /><br />
+            <span asp-validation-for="@Model.NoOfPersons"></span><br />
 
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <div>
-                    <button style="margin-left: 100.25px">Submit</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div>
+                <button style="margin-left: 100.25px">Submit</button>
 
-                    <input class="button" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
-                </div>
-            </div>*@
+                <input class="button" type="button" onclick="confirm('Are you sure you want to cancel the boat trip booking?'), location.replace('../Index')" value="Cancel" />
+            </div>
+        </div>*@
 
     </form>
 

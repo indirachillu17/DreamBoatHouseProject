@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
     [DbContext(typeof(FrejyaBåtHuset_WebAPI_BackendContext))]
-    [Migration("20201117152832_Initial1")]
-    partial class Initial1
+    [Migration("20201124134840_Initial2")]
+    partial class Initial2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

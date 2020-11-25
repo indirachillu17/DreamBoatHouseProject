@@ -32,13 +32,14 @@ namespace FrejyaBåtHuset_WebApplication_Front_end.Pages.BåthusetResa
             feedBack = new FeedBack();
             var userId = Convert.ToInt32(HttpContext.Session.GetString("Id"));
             feedBack.UserId =userId;
+            feedBack.FeedbackId = 1;
             //var userId = HttpContext.Session.GetString("Id");
             //feedBack.UserId= Convert.ToInt32(userId);
             feedBack.OverallExperience = experience[0].ToString();
             feedBack.BestExperience = experience1;
             feedBack.AnyAdditionalComments = comments.Trim();
 
-          var feedBackDetails = await apiHelper.PostCallApiAsync<FeedBack>(GlobalValue.ApiPath + "/FeedBack",feedBack);
+          var feedBackDetails = await apiHelper.PostCallApiAsync<FeedBack>(GlobalValue.ApiPath + "/FeedBacks", feedBack);
             //message = "The feeback is updated successfully.Do you want to goback to homepage";
             return RedirectToPage("/Index");
             //return RedirectToPage("./BåtHusetbokningSummary", feedBackDetails);

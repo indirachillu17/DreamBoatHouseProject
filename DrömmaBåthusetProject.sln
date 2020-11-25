@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrömmaBåtHuset_WebAPI_Bac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DrömmaBåtHuset_WebApplication_Front-end", "FrejyaBåtHuset_WebApplication_Front-end\DrömmaBåtHuset_WebApplication_Front-end.csproj", "{EE7C916A-208C-49E9-8EBC-5E483A0D940C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoatHouseUnitTestingProject", "BoatHouseUnitTestingProject\BoatHouseUnitTestingProject.csproj", "{EBBA2833-F6EE-432A-8CB3-8708662D324E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoatHouseUnitTestingProject", "BoatHouseUnitTestingProject\BoatHouseUnitTestingProject.csproj", "{567E81BB-BA06-43F8-B528-7F9282A86690}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE7C916A-208C-49E9-8EBC-5E483A0D940C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EBBA2833-F6EE-432A-8CB3-8708662D324E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EBBA2833-F6EE-432A-8CB3-8708662D324E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EBBA2833-F6EE-432A-8CB3-8708662D324E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EBBA2833-F6EE-432A-8CB3-8708662D324E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567E81BB-BA06-43F8-B528-7F9282A86690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567E81BB-BA06-43F8-B528-7F9282A86690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567E81BB-BA06-43F8-B528-7F9282A86690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567E81BB-BA06-43F8-B528-7F9282A86690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

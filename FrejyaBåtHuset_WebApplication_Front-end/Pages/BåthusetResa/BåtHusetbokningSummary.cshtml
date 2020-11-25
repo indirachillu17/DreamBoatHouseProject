@@ -174,64 +174,64 @@
 
 
         @*@foreach (var item in @Model.båtHusetBokningSummary)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UserId)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BåtHusetBokningTransactionID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DiscoverBoatHouse)
-                    </td>
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BåtHusetBokningTransactionID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DiscoverBoatHouse)
+                </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BoatTripPrice)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BoatStartTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BoatEndTime)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BoatTripDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.OtherActivities)
-                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatTripPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatStartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatEndTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BoatTripDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OtherActivities)
+                </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Restaurant)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Beverages)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.NoOfPersons)
-                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restaurant)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beverages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfPersons)
+                </td>
 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TotalPrice)
-                    </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice)
+                </td>
 
-                    <td>
-                        <a asp-page="./BåtHusetbokningSummary" asp-route-id="@item.BåtHusetBokningTransactionID"></a>
-
-
-                    </td>
-
-                    &nbsp;&nbsp;&nbsp;&nbsp;
+                <td>
+                    <a asp-page="./BåtHusetbokningSummary" asp-route-id="@item.BåtHusetBokningTransactionID"></a>
 
 
-                </tr>
-            }*@
+                </td>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            </tr>
+        }*@
 
 
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
 
 
     </tbody>

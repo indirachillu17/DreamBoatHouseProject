@@ -19,8 +19,6 @@ using FrejyaBåtHuset_WebAPI_Backend;
 
 
 
-
-
 namespace BoatHouseUnitTestingProject
 {
     public class LoginUnitTest : IClassFixture<WebApplicationFactory<Startup>>
@@ -60,6 +58,7 @@ namespace BoatHouseUnitTestingProject
 
 
         [Fact]
+
         public async Task AddNewUser()
         {
             User login = new User { UserName = "Test1", EmailId = "test1@ab.com", Password = "test", UserType = "user" };

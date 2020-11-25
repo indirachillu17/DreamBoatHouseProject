@@ -10,7 +10,7 @@ namespace FrejyaBåtHuset_WebAPI_Backend.Models
     public class FeedBack
     {
 
-            [Key]
+            
             public int FeedbackId { get; set; }
             public int UserId { get; set; }
             public string OverallExperience { get; set; }

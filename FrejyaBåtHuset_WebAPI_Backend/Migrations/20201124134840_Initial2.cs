@@ -2,7 +2,7 @@
 
 namespace FrejyaBåtHuset_WebAPI_Backend.Migrations
 {
-    public partial class Initial1 : Migration
+    public partial class Initial2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
